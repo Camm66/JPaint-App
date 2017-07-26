@@ -1,10 +1,10 @@
 package controller;
 import viewInterfaces.UIModule;
 
-public class SelectPrimaryColor implements ControllerInterface.ICommand {
+public class SelectSecondaryColor implements ControllerInterface.ICommand {
     private final ColorSettings _colorSettings;
     private final UIModule _uiModule;
-    SelectPrimaryColor(ColorSettings colorSettings, UIModule uiModule){
+    SelectSecondaryColor(ColorSettings colorSettings, UIModule uiModule){
         _colorSettings = colorSettings;
         _uiModule = uiModule;
     }
@@ -15,4 +15,3 @@ public class SelectPrimaryColor implements ControllerInterface.ICommand {
         _colorSettings.setCurrentColor(colorChoice);
     }
 }
-

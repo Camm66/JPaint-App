@@ -16,6 +16,9 @@ public class JPaintController implements IPaintController {
     @Override
     public void run() {
         _uiModule.addEvent(EventName.CHOOSE_SHAPE, new SelectShapeCommand(_settings.getDrawShapeSettings(), _uiModule));
-        _uiModule.addEvent(EventName.CHOOSE_PRIMARY_COLOR, new ChoosePrimaryColor(_settings.getColorShapeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.CHOOSE_PRIMARY_COLOR, new SelectPrimaryColor(_settings.getColorShapeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.CHOOSE_SECONDARY_COLOR, new SelectSecondaryColor(_settings.getColorShapeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.CHOOSE_SHADING_TYPE, new SelectShadingType(_settings.getShadingTypeShapeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, new SelectMouseMode(_settings.getMouseModeSettings(), _uiModule));
     }
 }
