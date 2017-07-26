@@ -3,7 +3,7 @@ package controller;
 import viewInterfaces.IDialogChoice;
 import java.util.Arrays;
 
-public class PrColorSettings implements IDialogChoice {
+public class ColorSettings implements IDialogChoice {
     private Color currentColor;
 
     void setCurrentColor(Color currentColor) {
