@@ -1,17 +1,17 @@
-package modelInterfaces;
+package view.GuiUiModule;
 
 import controller.ColorAdapter;
 import controller.Point;
 import controller.Shape;
-import view.GuiUiModule.PaintCanvas;
+import modelInterfaces.IViewShape;
 
 import java.awt.*;
 
-public class GuiEllipse implements IViewShape {
+public class GuiRectangle implements IViewShape {
     private Shape shape;
     private PaintCanvas canvas;
 
-    public GuiEllipse(Shape shape, PaintCanvas canvas) {
+    public GuiRectangle(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
         this.canvas = canvas;
     }
@@ -20,15 +20,15 @@ public class GuiEllipse implements IViewShape {
     public void displayOutline(ColorAdapter color) {
         Graphics2D graphics = canvas.getGraphics2D();
         graphics.setStroke(new BasicStroke(5));
-        graphics.setColor((Color)color.getColor());
-        graphics.drawOval(shape.getStartX(), shape.getStartY(), shape.getWidth(), shape.getHeight());
+        graphics.setColor(color.getColor());
+        graphics.drawRect(shape.getStartX(), shape.getStartY(), shape.getWidth(), shape.getHeight());
     }
 
     @Override
     public void displayFilled(ColorAdapter color) {
         Graphics2D graphics = canvas.getGraphics2D();
-        graphics.setColor((Color)color.getColor());
-        graphics.fillOval(shape.getStartX(), shape.getStartY(), shape.getWidth(), shape.getHeight());
+        graphics.setColor(color.getColor());
+        graphics.fillRect(shape.getStartX(), shape.getStartY(), shape.getWidth(), shape.getHeight());
     }
 
     @Override
@@ -41,3 +41,5 @@ public class GuiEllipse implements IViewShape {
         return shape.getSecondaryColor();
     }
 }
+
+//created 7/26

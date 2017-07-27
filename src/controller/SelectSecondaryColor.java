@@ -11,7 +11,7 @@ public class SelectSecondaryColor implements ControllerInterface.ICommand {
     
     @Override
     public void run() {
-        Color colorChoice = _uiModule.getDialogResponse(_colorSettings);
+        ColorChoice colorChoice = _uiModule.getDialogResponse(_colorSettings);
         _colorSettings.setCurrentColor(colorChoice);
     }
 }

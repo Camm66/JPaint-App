@@ -1,6 +1,6 @@
 package controller;
 
-public enum Color {
+public enum ColorChoice {
 	RED,
 	BLUE,
 	GREEN,
