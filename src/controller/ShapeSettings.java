@@ -5,13 +5,13 @@ import viewInterfaces.IDialogChoice;
 import java.util.Arrays;
 
 public class ShapeSettings implements IDialogChoice {
-    private Shape currentShape;
+    private ShapeType currentShape;
 
-    void setCurrentShape(Shape currentShape) {
+    void setCurrentShape(ShapeType currentShape) {
         this.currentShape = currentShape;
     }
 
-    Shape getCurrentShape() {
+    ShapeType getCurrentShape() {
         return currentShape;
     }
 
@@ -27,7 +27,7 @@ public class ShapeSettings implements IDialogChoice {
 
     @Override
     public Object[] getDialogOptions() {
-        return Shape.values();
+        return ShapeType.values();
     }
 
     @Override

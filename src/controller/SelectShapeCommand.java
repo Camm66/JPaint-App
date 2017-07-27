@@ -12,7 +12,7 @@ public class SelectShapeCommand implements ControllerInterface.ICommand {
 
     @Override
     public void run() {
-        Shape shapeChoice = _uiModule.getDialogResponse(_shapeSettings);
+        ShapeType shapeChoice = _uiModule.getDialogResponse(_shapeSettings);
         _shapeSettings.setCurrentShape(shapeChoice);
     }
 }

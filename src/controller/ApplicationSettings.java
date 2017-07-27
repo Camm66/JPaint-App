@@ -4,7 +4,8 @@ import viewInterfaces.IDialogChoice;
 
 class ApplicationSettings {
     private ShapeSettings drawShapeSettings = new ShapeSettings();
-    private ColorSettings shapeColorSettings = new ColorSettings();
+    private ColorSettings shapePrimaryColorSettings = new ColorSettings();
+    private ColorSettings shapeSecondaryColorSettings = new ColorSettings();
     private ShadingSettings shapeShadingTypeSettings = new ShadingSettings();
     private MouseModeSettings shapeMouseModeSettings = new MouseModeSettings();
 
@@ -12,8 +13,12 @@ class ApplicationSettings {
         return drawShapeSettings;
     }
     
-    ColorSettings getColorShapeSettings(){
-    	return shapeColorSettings;
+    ColorSettings getPrimaryColorShapeSettings(){
+    	return shapePrimaryColorSettings;
+    }
+    
+    ColorSettings getSecondaryColorShapeSettings(){
+    	return shapeSecondaryColorSettings;
     }
     
     ShadingSettings getShadingTypeShapeSettings(){
