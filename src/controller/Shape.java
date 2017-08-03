@@ -3,21 +3,37 @@ package controller;
 public class Shape {
 	private ColorAdapter primaryColor;
 	private ColorAdapter secondaryColor;
-	private ShapeType shape;
+	//private ShapeType shape;
+	private Point startPoint;
+	private Point endPoint;
+	
+	public Shape(ColorAdapter primaryColor, ColorAdapter secondaryColor, Point startPoint, Point endPoint){
+		this.primaryColor = primaryColor;
+		this.secondaryColor = secondaryColor;
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
+	}
 	
 	
 	public int getStartX(){
-		return 0;
+		return startPoint.getX();
 		}
 	public int getStartY(){
-		return 0;
+		return startPoint.getY();
 		}
+	public int getEndX(){
+		return endPoint.getX();
+		}
+	public int getEndY(){
+		return endPoint.getY();
+		}
+	
 	public int getWidth(){
-		return 0;
-		}
+		return endPoint.getX() - startPoint.getX();
+	}
 	public int getHeight(){
-		return 0;
-		}
+		return endPoint.getY() - startPoint.getY();
+	}
 	
 	
 	

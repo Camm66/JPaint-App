@@ -4,13 +4,13 @@ import viewInterfaces.IDialogChoice;
 import java.util.Arrays;
 
 public class ColorSettings implements IDialogChoice {
-    private ColorChoice currentColor;
+    private ColorAdapter currentColor;
 
-    void setCurrentColor(ColorChoice currentColor) {
+    void setCurrentColor(ColorAdapter currentColor) {
         this.currentColor = currentColor;
     }
 
-    ColorChoice getCurrentColor() {
+    public ColorAdapter getCurrentColor() {
         return currentColor;
     }
 

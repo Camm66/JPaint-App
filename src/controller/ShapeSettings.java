@@ -11,7 +11,7 @@ public class ShapeSettings implements IDialogChoice {
         this.currentShape = currentShape;
     }
 
-    ShapeType getCurrentShape() {
+    public ShapeType getCurrentShape() {
         return currentShape;
     }
 

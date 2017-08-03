@@ -21,13 +21,13 @@ public class GuiWindow extends JFrame implements IGuiWindow {
     private final Map<EventName, JButton> eventButtons = new HashMap<>();
     private final PaintCanvas canvas;
 
-    public GuiWindow(){
+    public GuiWindow(PaintCanvas canvas){
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle(defaultTitle);
         setSize(defaultWidth, defaultHeight);
         JPanel window = createWindow();
-        canvas = new PaintCanvas();
+        this.canvas = canvas;
         window.add(canvas, BorderLayout.CENTER);
 		validate();
     }

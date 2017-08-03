@@ -1,6 +1,5 @@
 package modelInterfaces;
 
-public class IDisplayableShape {
-	public void display(){
-	}
+public interface IDisplayableShape {
+	public void display();
 }
