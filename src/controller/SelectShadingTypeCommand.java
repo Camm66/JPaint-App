@@ -2,10 +2,10 @@ package controller;
 
 import viewInterfaces.UIModule;
 
-public class SelectShadingType implements ControllerInterface.ICommand {
+public class SelectShadingTypeCommand implements ControllerInterface.ICommand {
     private final ShadingSettings _shadeSettings;
     private final UIModule _uiModule;
-    SelectShadingType(ShadingSettings shadeSettings, UIModule uiModule){
+    SelectShadingTypeCommand(ShadingSettings shadeSettings, UIModule uiModule){
         _shadeSettings = shadeSettings;
         _uiModule = uiModule;
     }

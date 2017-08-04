@@ -10,6 +10,6 @@ public class OutlineShape implements IDisplayableShape {
 	}
 	
 	public void display(){
-		viewShape.displayOutline(viewShape.getSecondaryColor());
+		viewShape.displayOutline(viewShape.getPrimaryColor());
 	}
 }

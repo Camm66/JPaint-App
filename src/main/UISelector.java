@@ -1,15 +1,17 @@
 package main;
 
+import controller.ApplicationSettings;
+import model.ShapeList;
 import view.UIFactory;
 import view.UIType;
 import viewInterfaces.InvalidUIException;
 import viewInterfaces.UIModule;
 
 public class UISelector {
-    public UIModule getUi(String arg) throws InvalidUIException {
+    public UIModule getUi(String arg, ApplicationSettings settings, ShapeList shapeList) throws InvalidUIException {
         UIType uiType;
         uiType = getUiType(arg);
-        UIModule ui = UIFactory.createUI(uiType);
+        UIModule ui = UIFactory.createUI(uiType, settings, shapeList);
         return ui;
     }
 

@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class ColorSettings implements IDialogChoice {
     private ColorAdapter currentColor;
 
-    void setCurrentColor(ColorAdapter currentColor) {
-        this.currentColor = currentColor;
+    public void setCurrentColor(ColorAdapter color) {
+        this.currentColor = color;
     }
 
     public ColorAdapter getCurrentColor() {

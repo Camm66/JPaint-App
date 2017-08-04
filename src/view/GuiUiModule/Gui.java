@@ -1,8 +1,9 @@
 package view.GuiUiModule;
 
 import javax.swing.*;
+
+import ControllerInterface.ICommand;
 import viewInterfaces.EventName;
-import ControllerInterfaces.ICommand;
 import viewInterfaces.IDialogChoice;
 import viewInterfaces.UIModule;
 import view.IGuiWindow;
@@ -16,7 +17,7 @@ public class Gui implements UIModule {
     }
     
 	@Override
-	public void addEvent(EventName eventName, ControllerInterface.ICommand command) {
+	public void addEvent(EventName eventName, ICommand command) {
 		JButton button = gui.getButton(eventName);
 		button.addActionListener((ActionEvent) -> command.run());
 	}

@@ -4,7 +4,9 @@ import java.awt.event.MouseListener;
 
 import controller.ApplicationSettings;
 import controller.CreateShapeCommand;
+import model.ShapeFactory;
 import model.ShapeList;
+import modelInterfaces.IShapeFactory;
 import view.CmdUiModule.Cmd;
 import view.GuiUiModule.DrawMouseListener;
 import view.GuiUiModule.Gui;
@@ -24,8 +26,7 @@ public class UIFactory {
             case GUI:
             	PaintCanvas canvas = new PaintCanvas();
                 ui = new Gui(new GuiWindow(canvas));
-                MouseListener mouseListener = new DrawMouseListener(new CreateShapeCommand
-                (new ShapeFactory(settings, shapeList, new GuiViewShapeFactory(canvas), new DisplayableShapeFactory())));
+                MouseListener mouseListener = new DrawMouseListener(new CreateShapeCommand(new ShapeFactory(settings, shapeList, new GuiViewShapeFactory(canvas), new DisplayableShapeFactory())));
                 canvas.addMouseListener(mouseListener);
                 shapeList.registerObserver(canvas);
                 break;

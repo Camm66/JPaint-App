@@ -1,13 +1,18 @@
 package view.GuiUiModule;
 
 import modelInterfaces.*;
+import viewInterfaces.*;
+
 import java.awt.*;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.util.*;
+import java.util.List;
 
 import javax.swing.JComponent;
 
-public class PaintCanvas extends JComponent {
-	/*private Graphics2D graphics2d;
+public class PaintCanvas extends JComponent implements IShapeListObserver {
+	private Graphics2D graphics2d;
 	@Override
 	public void paint(Graphics graphics){
         this.graphics2d = (Graphics2D)graphics;
@@ -16,7 +21,7 @@ public class PaintCanvas extends JComponent {
         graphics2d.setStroke(new BasicStroke(5));
         graphics2d.setColor(Color.blue);
         graphics2d.drawRect(12, 13, 600, 600);
-	}*/
+	}
 	
 	//added Graphics2D 7/26
 	

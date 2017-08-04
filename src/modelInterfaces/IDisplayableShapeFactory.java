@@ -4,6 +4,6 @@ import controller.ShadingType;
 
 public interface IDisplayableShapeFactory {
 
-	IDisplayableShape createDisplayShape(ShadingType currentShading, IViewShape viewShape);
+	IDisplayableShape createDisplayShape(ShadingType currentShading, IViewShape viewShape) throws Exception;
 
 }

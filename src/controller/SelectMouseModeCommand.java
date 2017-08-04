@@ -2,10 +2,10 @@ package controller;
 
 import viewInterfaces.UIModule;
 
-public class SelectMouseMode implements ControllerInterface.ICommand {
+public class SelectMouseModeCommand implements ControllerInterface.ICommand {
     private final MouseModeSettings _mouseModeSettings;
     private final UIModule _uiModule;
-    SelectMouseMode(MouseModeSettings mouseModeSettings, UIModule uiModule){
+    SelectMouseModeCommand(MouseModeSettings mouseModeSettings, UIModule uiModule){
         _mouseModeSettings = mouseModeSettings;
         _uiModule = uiModule;
     }

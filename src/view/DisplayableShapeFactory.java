@@ -7,7 +7,7 @@ import model.*;
 public class DisplayableShapeFactory implements IDisplayableShapeFactory {
 
 	@Override
-	public IDisplayableShape createDisplayShape(ShadingType currentShading, IViewShape viewShape) {
+	public IDisplayableShape createDisplayShape(ShadingType currentShading, IViewShape viewShape) throws Exception {
 		switch(currentShading){
 			case OUTLINE:
 				return new OutlineShape(viewShape);
