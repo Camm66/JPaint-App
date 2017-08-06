@@ -16,7 +16,7 @@ public class ApplicationSettings {
     this.shapeShadingTypeSettings.setCurrentShadingType(ShadingType.OUTLINE_AND_FILLED_IN);
     this.shapePrimaryColorSettings.setCurrentColor(new ColorAdapter("Blue", Color.blue));
     this.shapeSecondaryColorSettings.setCurrentColor(new ColorAdapter("Red", Color.red));
-    this.shapeMouseModeSettings.setCurrentMouseMode(MouseMode.DRAW);
+    //this.shapeMouseModeSettings.setInitialMouseMode(MouseMode.DRAW);
     }
     
     public ShapeSettings getDrawShapeSettings() {
@@ -35,14 +35,14 @@ public class ApplicationSettings {
     	return shapeShadingTypeSettings;
     }
     
-    MouseModeSettings getMouseModeSettings(){
+    public MouseModeSettings getMouseModeSettings(){
     	return shapeMouseModeSettings;
     }
     
     
-    public void setPrimaryColorShapeSettings(ColorAdapter colorSettings){
-    	this.shapePrimaryColorSettings.setCurrentColor(colorSettings);
-    }
+    //public void setPrimaryColorShapeSettings(ColorAdapter colorSettings){
+   // 	this.shapePrimaryColorSettings.setCurrentColor(colorSettings);
+   //}
     
     
 }

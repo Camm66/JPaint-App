@@ -1,5 +1,6 @@
 package controller;
 
+import view.MouseModeFactory;
 import viewInterfaces.UIModule;
 
 public class SelectMouseModeCommand implements ControllerInterface.ICommand {
@@ -8,11 +9,11 @@ public class SelectMouseModeCommand implements ControllerInterface.ICommand {
     SelectMouseModeCommand(MouseModeSettings mouseModeSettings, UIModule uiModule){
         _mouseModeSettings = mouseModeSettings;
         _uiModule = uiModule;
-    }
+        }
 	    
     @Override
     public void run() {
         MouseMode mouseModeChoice = _uiModule.getDialogResponse(_mouseModeSettings);
         _mouseModeSettings.setCurrentMouseMode(mouseModeChoice);
-    }
+        }
 }

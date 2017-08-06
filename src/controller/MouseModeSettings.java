@@ -4,15 +4,32 @@ import viewInterfaces.IDialogChoice;
 
 import java.util.Arrays;
 
+import view.MouseModeFactory;
+
 public class MouseModeSettings implements IDialogChoice {
     private MouseMode currentMouseMode;
+    private MouseModeFactory mouseModeFactory;
 
+
+    
     void setCurrentMouseMode(MouseMode currentMode) {
         this.currentMouseMode = currentMode;
+        System.out.println(currentMode);
+        mouseModeFactory.createMouseMode(currentMode);
+        
     }
 
     MouseMode getCurrentMouseMode() {
         return currentMouseMode;
+    }
+    
+    
+    public void setMouseModeFactory(MouseModeFactory mouseModeFactory){
+    	this.mouseModeFactory = mouseModeFactory;
+    }
+    
+    public MouseModeFactory getMouseModeFactory(){
+    	return mouseModeFactory;
     }
 
     @Override

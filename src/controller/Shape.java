@@ -44,6 +44,13 @@ public class Shape {
 	public ColorAdapter getSecondaryColor(){
 		return secondaryColor;
 	}
+	
+	public Point getStartPoint(){
+		return startPoint;
+	}
+	public Point getEndPoint(){
+		return endPoint;
+	}
 }
 
 //created 7/26
