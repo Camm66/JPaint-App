@@ -1,8 +1,10 @@
 package controller;
+import java.awt.Color;
+
 import viewInterfaces.UIModule;
 
 public class SelectSecondaryColorCommand implements ControllerInterface.ICommand {
-    private final ColorSettings _colorSettings;
+    private ColorSettings _colorSettings;
     private final UIModule _uiModule;
     SelectSecondaryColorCommand(ColorSettings colorSettings, UIModule uiModule){
         _colorSettings = colorSettings;

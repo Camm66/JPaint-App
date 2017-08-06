@@ -5,8 +5,8 @@ import javax.swing.*;
 import ControllerInterface.ICommand;
 import viewInterfaces.EventName;
 import viewInterfaces.IDialogChoice;
+import viewInterfaces.IGuiWindow;
 import viewInterfaces.UIModule;
-import view.IGuiWindow;
 
 public class Gui implements UIModule {
 
@@ -24,8 +24,8 @@ public class Gui implements UIModule {
 
     @Override
     public <T> T getDialogResponse(IDialogChoice dialogSettings) {
-        Object selectedValue = JOptionPane.showInputDialog(null,
-                dialogSettings.getDialogText(), dialogSettings.getDialogTitle(),
+        Object selectedValue = JOptionPane.showInputDialog(null, 
+        		dialogSettings.getDialogText(), dialogSettings.getDialogTitle(),
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 dialogSettings.getDialogOptions(),

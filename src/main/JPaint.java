@@ -1,6 +1,6 @@
 package main;
 
-import controller.IPaintController;
+import ControllerInterface.IPaintController;
 
 class JPaint {
     private IPaintController _controller;

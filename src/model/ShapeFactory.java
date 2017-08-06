@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Color;
+
 import controller.*;
 import modelInterfaces.*;
 
@@ -55,6 +57,7 @@ public class ShapeFactory implements IShapeFactory {
 		ColorAdapter primaryColor = settings.getPrimaryColorShapeSettings().getCurrentColor();
 		ColorAdapter secondaryColor = settings.getSecondaryColorShapeSettings().getCurrentColor();
 		return new Shape(primaryColor, secondaryColor, startingPoint, endingPoint);
+		
 	}
 	
 }

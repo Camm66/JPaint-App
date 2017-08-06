@@ -31,7 +31,7 @@ public class ShapeSettings implements IDialogChoice {
     }
 
     @Override
-    public Object getDefaultChoice() {
-        return getCurrentShape();
+    public ShapeType getDefaultChoice() {
+        return currentShape;
     }
 }

@@ -1,19 +1,32 @@
 package controller;
 
 import viewInterfaces.IDialogChoice;
+
+import java.awt.Color;
 import java.util.Arrays;
 
 public class ColorSettings implements IDialogChoice {
     private ColorAdapter currentColor;
+    
+    //public ColorSettings(){}
 
-    public void setCurrentColor(ColorAdapter color) {
-        this.currentColor = color;
-    }
+    public void setCurrentColor(ColorAdapter currentColor) {
+        this.currentColor = currentColor;    }
 
     public ColorAdapter getCurrentColor() {
         return currentColor;
     }
 
+    
+    
+    public static ColorAdapter[] colorChoices = {
+    		new ColorAdapter("Red", Color.red), 
+    		new ColorAdapter("Blue", Color.blue),
+    		new ColorAdapter("Green", Color.green)
+    }; 
+    
+    
+    
     @Override
     public String getDialogTitle() {
         return "Select a Color";
@@ -26,11 +39,11 @@ public class ColorSettings implements IDialogChoice {
 
     @Override
     public Object[] getDialogOptions() {
-        return ColorChoice.values();
+        return colorChoices;
     }
 
     @Override
-    public Object getDefaultChoice() {
-        return getCurrentColor();
+    public ColorAdapter getDefaultChoice() {
+        return currentColor;
     }
 }

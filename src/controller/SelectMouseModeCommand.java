@@ -13,6 +13,6 @@ public class SelectMouseModeCommand implements ControllerInterface.ICommand {
     @Override
     public void run() {
         MouseMode mouseModeChoice = _uiModule.getDialogResponse(_mouseModeSettings);
-        _mouseModeSettings.setCurrentShadingType(mouseModeChoice);
+        _mouseModeSettings.setCurrentMouseMode(mouseModeChoice);
     }
 }

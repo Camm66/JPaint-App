@@ -3,13 +3,13 @@ package controller;
 import java.awt.Color;
 
 public class ColorAdapter {
-	private Color color;
 	private String colorName;
+	private Color color;
 	
 	
-	public ColorAdapter(Color color, String colorName){
-		this.color = color;
+	public ColorAdapter(String colorName, Color color){
 		this.colorName = colorName; 
+		this.color = color;
 	}
 	
 	public Color getColor(){
@@ -19,6 +19,16 @@ public class ColorAdapter {
 	public void setColor(Color color){
 		this.color = color;
 	}
+	
+	public String getName(){
+		return this.colorName;
+	}
+	
+	public void setName(String colorName){
+		this.colorName = colorName;
+	}
+	
+	
 }
 //created 7/26
 /*This Implements an AdapterPattern 

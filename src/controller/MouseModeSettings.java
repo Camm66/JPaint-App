@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class MouseModeSettings implements IDialogChoice {
     private MouseMode currentMouseMode;
 
-    void setCurrentShadingType(MouseMode currentMode) {
+    void setCurrentMouseMode(MouseMode currentMode) {
         this.currentMouseMode = currentMode;
     }
 
@@ -32,6 +32,6 @@ public class MouseModeSettings implements IDialogChoice {
 
     @Override
     public Object getDefaultChoice() {
-        return getCurrentMouseMode();
+        return currentMouseMode;
     }
 }

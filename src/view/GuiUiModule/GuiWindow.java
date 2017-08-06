@@ -7,8 +7,8 @@ import java.util.NoSuchElementException;
 import javax.swing.*;
 import javax.swing.border.*;
 
-import view.IGuiWindow;
 import viewInterfaces.EventName;
+import viewInterfaces.IGuiWindow;
 
 import java.awt.*;
 

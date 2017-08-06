@@ -11,7 +11,8 @@ public class ShadingSettings implements IDialogChoice {
         this.currentShadingType = currentShade;
     }
 
-    public ShadingType getCurrentShadingType() {
+    public ShadingType getCurrentShadingType(
+    		) {
         return currentShadingType;
     }
 
@@ -31,7 +32,7 @@ public class ShadingSettings implements IDialogChoice {
     }
 
     @Override
-    public Object getDefaultChoice() {
-        return getCurrentShadingType();
+    public ShadingType getDefaultChoice() {
+        return currentShadingType;
     }
 }

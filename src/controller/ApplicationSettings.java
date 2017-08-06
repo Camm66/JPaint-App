@@ -1,15 +1,23 @@
 package controller;
 
+import java.awt.Color;
+
 import viewInterfaces.IDialogChoice;
 
 public class ApplicationSettings {
-    private ShapeSettings drawShapeSettings = new ShapeSettings();
-    private ColorSettings shapePrimaryColorSettings = new ColorSettings();
-    private ColorSettings shapeSecondaryColorSettings = new ColorSettings();
-    private ShadingSettings shapeShadingTypeSettings = new ShadingSettings();
-    private MouseModeSettings shapeMouseModeSettings = new MouseModeSettings();
-
-    public ApplicationSettings(){}
+    private final ShapeSettings drawShapeSettings = new ShapeSettings();
+    private final ColorSettings shapePrimaryColorSettings = new ColorSettings();
+    private final ColorSettings shapeSecondaryColorSettings = new ColorSettings();
+    private final ShadingSettings shapeShadingTypeSettings = new ShadingSettings();
+    private final MouseModeSettings shapeMouseModeSettings = new MouseModeSettings();
+    
+    public ApplicationSettings(){
+    this.drawShapeSettings.setCurrentShape(ShapeType.ELLIPSE);
+    this.shapeShadingTypeSettings.setCurrentShadingType(ShadingType.OUTLINE_AND_FILLED_IN);
+    this.shapePrimaryColorSettings.setCurrentColor(new ColorAdapter("Blue", Color.blue));
+    this.shapeSecondaryColorSettings.setCurrentColor(new ColorAdapter("Red", Color.red));
+    this.shapeMouseModeSettings.setCurrentMouseMode(MouseMode.DRAW);
+    }
     
     public ShapeSettings getDrawShapeSettings() {
         return drawShapeSettings;
@@ -30,4 +38,11 @@ public class ApplicationSettings {
     MouseModeSettings getMouseModeSettings(){
     	return shapeMouseModeSettings;
     }
+    
+    
+    public void setPrimaryColorShapeSettings(ColorAdapter colorSettings){
+    	this.shapePrimaryColorSettings.setCurrentColor(colorSettings);
+    }
+    
+    
 }

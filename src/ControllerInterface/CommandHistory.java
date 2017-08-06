@@ -7,6 +7,7 @@ class CommandHistory {
 	private static final Stack<IUndoable> redoStack = new Stack<IUndoable>();
 
 	public static void add(IUndoable cmd) {
+		System.out.println("Command recorded");
 		undoStack.push(cmd);
 		redoStack.clear();
 	}

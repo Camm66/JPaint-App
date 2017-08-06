@@ -5,6 +5,6 @@ import controller.ShapeType;
 
 public interface IViewShapeFactory {
 
-	IViewShape createViewShape(ShapeType currentShape, Shape shape);
+	IViewShape createViewShape(ShapeType currentShape, Shape shape) throws Exception;
 
 }

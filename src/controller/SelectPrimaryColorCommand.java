@@ -1,4 +1,6 @@
 package controller;
+import java.awt.Color;
+
 import viewInterfaces.UIModule;
 
 public class SelectPrimaryColorCommand implements ControllerInterface.ICommand {
@@ -13,6 +15,6 @@ public class SelectPrimaryColorCommand implements ControllerInterface.ICommand {
     public void run() {
         ColorAdapter color = _uiModule.getDialogResponse(_colorSettings);
         _colorSettings.setCurrentColor(color);
-    }
+        }
 }
 

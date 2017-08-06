@@ -1,4 +1,4 @@
-package controller;
+package ControllerInterface;
 
 import viewInterfaces.IDialogChoice;
 

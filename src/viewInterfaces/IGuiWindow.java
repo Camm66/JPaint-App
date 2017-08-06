@@ -1,6 +1,4 @@
-package view;
-
-import viewInterfaces.EventName;
+package viewInterfaces;
 
 import javax.swing.*;
 
