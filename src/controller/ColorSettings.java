@@ -3,7 +3,6 @@ package controller;
 import viewInterfaces.IDialogChoice;
 
 import java.awt.Color;
-import java.util.Arrays;
 
 public class ColorSettings implements IDialogChoice {
     private ColorAdapter currentColor;
@@ -39,11 +38,11 @@ public class ColorSettings implements IDialogChoice {
 
     @Override
     public Object[] getDialogOptions() {
-        return colorChoices;
+    	return colorChoices;
     }
 
     @Override
-    public ColorAdapter getDefaultChoice() {
+    public Object getDefaultChoice() {
         return currentColor;
     }
 }

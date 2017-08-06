@@ -21,11 +21,15 @@ public class ColorAdapter {
 	}
 	
 	public String getName(){
-		return this.colorName;
+		return colorName;
 	}
 	
 	public void setName(String colorName){
 		this.colorName = colorName;
+	}
+	
+	public String toString(){
+		return colorName;
 	}
 	
 	
