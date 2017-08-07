@@ -14,6 +14,8 @@ public class SelectMouseModeCommand implements ControllerInterface.ICommand {
     @Override
     public void run() {
         MouseMode mouseModeChoice = _uiModule.getDialogResponse(_mouseModeSettings);
+        if(mouseModeChoice == null)
+        	mouseModeChoice = MouseMode.SELECT; // fix me
         _mouseModeSettings.setCurrentMouseMode(mouseModeChoice);
         }
 }

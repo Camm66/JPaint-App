@@ -17,7 +17,7 @@ public class GuiViewShapeFactory implements IViewShapeFactory{
 	}
 
 	@Override
-	public IViewShape createViewShape(ShapeType currentShape, Shape shape) throws Exception {
+	public IViewShape createViewShape(ShapeType currentShape, Shape shape) throws Exception {		
 		switch(currentShape){
 			case ELLIPSE:
 				return new GuiEllipse(shape, canvas);

@@ -8,7 +8,10 @@ public class ShadingSettings implements IDialogChoice {
     private ShadingType currentShadingType;
 
     void setCurrentShadingType(ShadingType currentShade) {
-        this.currentShadingType = currentShade;
+    	if(currentShade == null)
+    		return;
+    	else
+    		this.currentShadingType = currentShade;
     }
 
     public ShadingType getCurrentShadingType(

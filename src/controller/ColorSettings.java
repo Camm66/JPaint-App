@@ -7,10 +7,12 @@ import java.awt.Color;
 public class ColorSettings implements IDialogChoice {
     private ColorAdapter currentColor;
     
-    //public ColorSettings(){}
-
     public void setCurrentColor(ColorAdapter currentColor) {
-        this.currentColor = currentColor;    }
+    	if(currentColor == null)
+    		return;
+    	else
+    		this.currentColor = currentColor;   
+    	}
 
     public ColorAdapter getCurrentColor() {
         return currentColor;

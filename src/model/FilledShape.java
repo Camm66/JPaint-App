@@ -11,5 +11,7 @@ public class FilledShape implements IDisplayableShape {
 	
 	public void display(){
 		viewShape.displayFilled(viewShape.getPrimaryColor());
+		System.out.println("Action Taken");
+
 	}
 }

@@ -2,11 +2,12 @@ package view;
 
 import java.awt.event.MouseListener;
 
+import ControllerInterface.CommandHistory;
+import ControllerInterface.CreateShapeCommand;
+import ControllerInterface.ShapeList;
 import controller.ApplicationSettings;
-import controller.CreateShapeCommand;
 import controller.MouseMode;
 import model.ShapeFactory;
-import model.ShapeList;
 import modelInterfaces.IShapeFactory;
 import view.CmdUiModule.Cmd;
 import view.GuiUiModule.DrawMouseListener;
@@ -29,17 +30,16 @@ public class UIFactory {
             case GUI:
             	PaintCanvas canvas = new PaintCanvas();
                 ui = new Gui(new GuiWindow(canvas));
-                
+                shapeList.registerObserver(canvas);
+                shapeList.setCommandHistory(new CommandHistory());
+               // initializeMouseListenerFactory(DrawListener, MoveListener, SelectListener, settings, shapeList, canvas);
                 MouseListener DrawListener = new DrawMouseListener(new CreateShapeCommand(new ShapeFactory(settings, shapeList, new GuiViewShapeFactory(canvas), new DisplayableShapeFactory())));
                 MouseListener MoveListener = new MoveMouseListener();
                 MouseListener SelectListener = new SelectMouseListener();
                 MouseModeFactory mouseModeFactory = new MouseModeFactory(DrawListener, MoveListener, SelectListener, canvas);
-                
-                
-                //canvas.addMouseListener(mouseListener);
-                shapeList.registerObserver(canvas);
                 settings.getMouseModeSettings().setMouseModeFactory(mouseModeFactory);
                 settings.getMouseModeSettings().getMouseModeFactory().createMouseMode(MouseMode.DRAW);
+                
                 break;
             default:
                 throw new InvalidUIException();

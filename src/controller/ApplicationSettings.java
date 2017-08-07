@@ -40,9 +40,4 @@ public class ApplicationSettings {
     }
     
     
-    //public void setPrimaryColorShapeSettings(ColorAdapter colorSettings){
-   // 	this.shapePrimaryColorSettings.setCurrentColor(colorSettings);
-   //}
-    
-    
 }

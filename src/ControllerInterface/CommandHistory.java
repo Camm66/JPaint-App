@@ -2,9 +2,11 @@ package ControllerInterface;
 
 import java.util.Stack;
 
-class CommandHistory {
+public class CommandHistory {
 	private static final Stack<IUndoable> undoStack = new Stack<IUndoable>();
 	private static final Stack<IUndoable> redoStack = new Stack<IUndoable>();
+	
+	public CommandHistory(){}
 
 	public static void add(IUndoable cmd) {
 		System.out.println("Command recorded");

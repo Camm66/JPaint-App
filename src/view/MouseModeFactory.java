@@ -2,11 +2,11 @@ package view;
 
 import java.awt.event.MouseListener;
 
+import ControllerInterface.CreateShapeCommand;
+import ControllerInterface.ShapeList;
 import controller.ApplicationSettings;
-import controller.CreateShapeCommand;
 import controller.MouseMode;
 import model.ShapeFactory;
-import model.ShapeList;
 import view.GuiUiModule.DrawMouseListener;
 import view.GuiUiModule.MoveMouseListener;
 import view.GuiUiModule.PaintCanvas;
@@ -27,8 +27,7 @@ public class MouseModeFactory {
 		this.canvas = canvas;
 	}
 	
-	public void createMouseMode(MouseMode mouseMode) {
-		System.out.println("mode inside Factory = " + mouseMode);
+	public void createMouseMode(MouseMode mouseMode){
 		canvas.removeMouseListener(previousListener);
 		switch(mouseMode){
 		case DRAW:
@@ -42,12 +41,9 @@ public class MouseModeFactory {
 			break;
 		default:
 			currentListener = drawListener;
-		}
+			}
 		this.previousListener = currentListener;
 		canvas.addMouseListener(currentListener);
-		System.out.println("mode inside Factory = " + currentListener);
-
-		//return currentListener;
 	}
 }
 //rename me

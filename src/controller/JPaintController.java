@@ -3,6 +3,8 @@ package controller;
 import java.awt.Color;
 
 import ControllerInterface.IPaintController;
+import ControllerInterface.RedoCommand;
+import ControllerInterface.UndoCommand;
 import viewInterfaces.EventName;
 import viewInterfaces.UIModule;
 
@@ -13,11 +15,6 @@ public class JPaintController implements IPaintController {
     public JPaintController(UIModule uiModule, ApplicationSettings settings){
         _uiModule = uiModule;
         _settings = settings;
-        /*_settings.getDrawShapeSettings().setCurrentShape(ShapeType.ELLIPSE);
-        _settings.getShadingTypeShapeSettings().setCurrentShadingType(ShadingType.OUTLINE_AND_FILLED_IN);
-        _settings.getPrimaryColorShapeSettings().setCurrentColor(new ColorAdapter("Blue", Color.blue));
-        _settings.getSecondaryColorShapeSettings().setCurrentColor(new ColorAdapter("Blue", Color.blue));
-        _settings.getMouseModeSettings().setCurrentMouseMode(MouseMode.DRAW);*/
     }
 
     @Override
@@ -27,5 +24,10 @@ public class JPaintController implements IPaintController {
         _uiModule.addEvent(EventName.CHOOSE_SECONDARY_COLOR, new SelectSecondaryColorCommand(_settings.getSecondaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SHADING_TYPE, new SelectShadingTypeCommand(_settings.getShadingTypeShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, new SelectMouseModeCommand(_settings.getMouseModeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.UNDO, new UndoCommand(_uiModule));
+        _uiModule.addEvent(EventName.REDO, new RedoCommand(_uiModule));
+        //_uiModule.addEvent(EventName.COPY, new CopyCommand(_uiModule));
+        //_uiModule.addEvent(EventName.PASTE, new PasteCommand(_uiModule));
+        //_uiModule.addEvent(EventName.DELETE, new DeleteCommand(_uiModule));
     }
 }

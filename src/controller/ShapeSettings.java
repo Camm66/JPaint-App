@@ -8,7 +8,10 @@ public class ShapeSettings implements IDialogChoice {
     private ShapeType currentShape;
 
     void setCurrentShape(ShapeType currentShape) {
-        this.currentShape = currentShape;
+    	if(currentShape == null)
+    		return;
+    	else
+    		this.currentShape = currentShape;
     }
 
     public ShapeType getCurrentShape() {

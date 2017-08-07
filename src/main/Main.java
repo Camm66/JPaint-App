@@ -1,8 +1,8 @@
 package main;
 
 import ControllerInterface.IPaintController;
+import ControllerInterface.ShapeList;
 import controller.*;
-import controller.JPaintController;
 import view.GuiUiModule.Gui;
 import view.UIFactory;
 import view.UIType;

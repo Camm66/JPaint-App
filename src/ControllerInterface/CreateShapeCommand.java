@@ -1,5 +1,6 @@
-package controller;
+package ControllerInterface;
 
+import controller.Point;
 import modelInterfaces.*;
 
 public class CreateShapeCommand implements IStartAndEndPointCommand {
@@ -11,8 +12,7 @@ public class CreateShapeCommand implements IStartAndEndPointCommand {
 
 	@Override
 	public void run(Point startingPoint, Point endingPoint) throws Exception {
-		shapeFactory.create(startingPoint, endingPoint);
-		
+		shapeFactory.create(startingPoint, endingPoint);		
 	}
 	
 }

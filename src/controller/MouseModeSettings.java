@@ -12,9 +12,8 @@ public class MouseModeSettings implements IDialogChoice {
 
 
     
-    void setCurrentMouseMode(MouseMode currentMode) {
+    void setCurrentMouseMode(MouseMode currentMode){
         this.currentMouseMode = currentMode;
-        System.out.println(currentMode);
         mouseModeFactory.createMouseMode(currentMode);
         
     }

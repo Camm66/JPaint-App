@@ -25,7 +25,7 @@ public class Gui implements UIModule {
     @Override
     public <T> T getDialogResponse(IDialogChoice dialogSettings) {
         Object selectedValue = JOptionPane.showInputDialog(null, 
-        		dialogSettings.getDialogText(), dialogSettings.getDialogTitle(),
+dialogSettings.getDialogText(), dialogSettings.getDialogTitle(),
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 dialogSettings.getDialogOptions(),
