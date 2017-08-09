@@ -2,10 +2,10 @@ package controller;
 
 import viewInterfaces.UIModule;
 
-public class SelectShapeCommand implements ControllerInterface.ICommand {
+public class SelectShapeTypeCommand implements ControllerInterface.ICommand {
     private final ShapeSettings _shapeSettings;
     private final UIModule _uiModule;
-    SelectShapeCommand(ShapeSettings shapeSettings, UIModule uiModule){
+    SelectShapeTypeCommand(ShapeSettings shapeSettings, UIModule uiModule){
         _shapeSettings = shapeSettings;
         _uiModule = uiModule;
     }

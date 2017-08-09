@@ -31,6 +31,10 @@ public class GuiWindow extends JFrame implements IGuiWindow {
         window.add(canvas, BorderLayout.CENTER);
 		validate();
     }
+    
+    public PaintCanvas getCanvas(){
+    	return this.canvas; /////////////////////////////
+    }
 
     @Override
 	public JButton getButton(EventName eventName) {

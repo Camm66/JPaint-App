@@ -3,9 +3,9 @@ package view;
 import java.awt.event.MouseListener;
 
 import ControllerInterface.CommandHistory;
-import ControllerInterface.CreateShapeCommand;
 import ControllerInterface.ShapeList;
 import controller.ApplicationSettings;
+import controller.CreateShapeCommand;
 import controller.MouseMode;
 import model.ShapeFactory;
 import modelInterfaces.IShapeFactory;
@@ -29,8 +29,10 @@ public class UIFactory {
                 break;
             case GUI:
             	PaintCanvas canvas = new PaintCanvas();
-                ui = new Gui(new GuiWindow(canvas));
-                shapeList.registerObserver(canvas);
+                ui = new Gui(new GuiWindow(canvas));                
+                
+                
+                ////////////////////////////////////////////////////////////////
                 shapeList.setCommandHistory(new CommandHistory());
                // initializeMouseListenerFactory(DrawListener, MoveListener, SelectListener, settings, shapeList, canvas);
                 MouseListener DrawListener = new DrawMouseListener(new CreateShapeCommand(new ShapeFactory(settings, shapeList, new GuiViewShapeFactory(canvas), new DisplayableShapeFactory())));
@@ -39,6 +41,10 @@ public class UIFactory {
                 MouseModeFactory mouseModeFactory = new MouseModeFactory(DrawListener, MoveListener, SelectListener, canvas);
                 settings.getMouseModeSettings().setMouseModeFactory(mouseModeFactory);
                 settings.getMouseModeSettings().getMouseModeFactory().createMouseMode(MouseMode.DRAW);
+               ///////////////////////////////////////////////
+                
+                shapeList.registerObserver(canvas);
+
                 
                 break;
             default:

@@ -20,7 +20,7 @@ public class Gui implements UIModule {
 	public void addEvent(EventName eventName, ICommand command) {
 		JButton button = gui.getButton(eventName);
 		button.addActionListener((ActionEvent) -> command.run());
-	}
+		}
 
     @Override
     public <T> T getDialogResponse(IDialogChoice dialogSettings) {

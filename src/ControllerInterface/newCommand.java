@@ -17,7 +17,7 @@ public class newCommand implements IUndoable{
 	}
 
 	@Override
-	public void undo() {
+	public void undo(){
 		shapeList.undoRecentObserver(payLoad);
 	}
 
@@ -26,5 +26,12 @@ public class newCommand implements IUndoable{
 		shapeList.redoRecentObserver(payLoad);
 		
 	}
+
+	@Override
+	public void delete() {
+		shapeList.undoRecentObserver(payLoad);
+	}
+	
+	
 
 }

@@ -2,9 +2,9 @@ package view;
 
 import java.awt.event.MouseListener;
 
-import ControllerInterface.CreateShapeCommand;
 import ControllerInterface.ShapeList;
 import controller.ApplicationSettings;
+import controller.CreateShapeCommand;
 import controller.MouseMode;
 import model.ShapeFactory;
 import view.GuiUiModule.DrawMouseListener;

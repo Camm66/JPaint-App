@@ -2,7 +2,10 @@ package ControllerInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
+
+import javax.swing.SwingUtilities;
 
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
@@ -21,27 +24,27 @@ public class ShapeList implements IShapeList {
 		newCommand Command = new newCommand(displayableShape, this); // create command record
 		CommandHistory.add(Command); // add to history
 		observers.add(displayableShape);
-		notifyObservers();
+		notifyObservers.run();
 	}
 	
-	
-	public void notifyObservers(){
-		canvas.update(observers);
-
-	}
+	final Runnable notifyObservers = new Runnable(){
+			public void run(){
+				canvas.update(observers);
+		}
+	};
 	
 	public void undoRecentObserver(Object payload){
+		canvas.repaint();
 		observers.remove(payload);
-		notifyObservers();
-		//canvas.updateCanvas();
-}
-	
-	public void redoRecentObserver(Object payLoad){
-		observers.add((IDisplayableShape) payLoad);
-		notifyObservers();
-		//canvas.updateCanvas();
+		SwingUtilities.invokeLater(notifyObservers);
 	}
 	
+	public void redoRecentObserver(Object payLoad){
+		canvas.repaint();
+		observers.add((IDisplayableShape) payLoad);
+		SwingUtilities.invokeLater(notifyObservers);
+	}
+		
 
 	public void registerObserver(PaintCanvas canvas) {
 		this.canvas = canvas;

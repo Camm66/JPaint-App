@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JComponent;
 
@@ -18,16 +19,11 @@ public class PaintCanvas extends JComponent implements IShapeListObserver {
 	public void update(List<IDisplayableShape> shapes){
 		for(IDisplayableShape shape : shapes){
 			shape.display();
-			System.out.println(shape);
 		}
 	}
 	
+	
 	public Graphics2D getGraphics2D(){
 		return (Graphics2D)getGraphics();
-	}
-	
-	public void updateCanvas(){
-		repaint();
-		revalidate();
 	}
 }

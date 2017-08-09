@@ -1,6 +1,5 @@
-package ControllerInterface;
+package controller;
 
-import controller.Point;
 import modelInterfaces.*;
 
 public class CreateShapeCommand implements IStartAndEndPointCommand {

@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Color;
 
+import ControllerInterface.DeleteCommand;
 import ControllerInterface.IPaintController;
 import ControllerInterface.RedoCommand;
 import ControllerInterface.UndoCommand;
@@ -19,7 +20,7 @@ public class JPaintController implements IPaintController {
 
     @Override
     public void run() {
-        _uiModule.addEvent(EventName.CHOOSE_SHAPE, new SelectShapeCommand(_settings.getDrawShapeSettings(), _uiModule));
+        _uiModule.addEvent(EventName.CHOOSE_SHAPE, new SelectShapeTypeCommand(_settings.getDrawShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_PRIMARY_COLOR, new SelectPrimaryColorCommand( _settings.getPrimaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SECONDARY_COLOR, new SelectSecondaryColorCommand(_settings.getSecondaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SHADING_TYPE, new SelectShadingTypeCommand(_settings.getShadingTypeShapeSettings(), _uiModule));
@@ -28,6 +29,6 @@ public class JPaintController implements IPaintController {
         _uiModule.addEvent(EventName.REDO, new RedoCommand(_uiModule));
         //_uiModule.addEvent(EventName.COPY, new CopyCommand(_uiModule));
         //_uiModule.addEvent(EventName.PASTE, new PasteCommand(_uiModule));
-        //_uiModule.addEvent(EventName.DELETE, new DeleteCommand(_uiModule));
+        _uiModule.addEvent(EventName.DELETE, new DeleteCommand(_uiModule));
     }
 }

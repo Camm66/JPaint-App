@@ -12,7 +12,7 @@ public class UndoCommand implements ICommand {
 
 
 	@Override
-	public void run() {
+	public void run(){
 		System.out.println("Undo Pressed");
 		CommandHistory.undo();
 	}
