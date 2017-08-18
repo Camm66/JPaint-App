@@ -2,48 +2,39 @@ package view;
 
 import java.awt.event.MouseListener;
 
-import ControllerInterface.ShapeList;
-import controller.ApplicationSettings;
-import controller.CreateShapeCommand;
-import controller.MouseMode;
-import model.ShapeFactory;
-import view.GuiUiModule.DrawMouseListener;
-import view.GuiUiModule.MoveMouseListener;
-import view.GuiUiModule.PaintCanvas;
-import view.GuiUiModule.SelectMouseListener;
+import ControllerInterface.*;
+import controller.*;
+import model.*;
+import modelInterfaces.IStartAndEndPointCommand;
+import view.GuiUiModule.*;
 
 public class MouseModeFactory {
-	private final PaintCanvas canvas;
-	private final MouseListener drawListener;
-	private final MouseListener moveListener;
-	private final MouseListener selectListener;
-	private MouseListener currentListener;
-	private MouseListener previousListener;
+	private final MyMouseListener mouseListener;
+	private final _CreateShapeCommand _createShapeCommand;
+	private final _SelectShapesCommand _selectShapeCommand;
+	private final _MoveShapesCommand _moveShapeCommand;
 	
-	public MouseModeFactory(MouseListener drawListener, MouseListener moveListener, MouseListener selectListener, PaintCanvas canvas){
-		this.drawListener = drawListener;
-		this.moveListener = moveListener;
-		this.selectListener = selectListener;
-		this.canvas = canvas;
+	public MouseModeFactory(ShapeFactory shapeFactory, ShapeList shapeList, PaintCanvas canvas, ShapeCloneFactory shapeCloneFactory){
+		this._createShapeCommand = new _CreateShapeCommand(shapeList, shapeFactory);
+		this._selectShapeCommand = new _SelectShapesCommand(shapeList, shapeFactory);
+		this._moveShapeCommand = new _MoveShapesCommand(shapeList, shapeCloneFactory);
+		this.mouseListener = new MyMouseListener(_createShapeCommand);
+		canvas.addMouseListener(mouseListener);
 	}
-	
-	public void createMouseMode(MouseMode mouseMode){
-		canvas.removeMouseListener(previousListener);
+	public void setMouseMode(MouseMode mouseMode){
 		switch(mouseMode){
 		case DRAW:
-			currentListener = drawListener;
+			mouseListener.setMouseListenerCommandType(_createShapeCommand);
 			break;
 		case MOVE:
-			currentListener = moveListener;
+			mouseListener.setMouseListenerCommandType(_moveShapeCommand);
 			break;
 		case SELECT:
-			currentListener = selectListener;
+			mouseListener.setMouseListenerCommandType(_selectShapeCommand);
 			break;
 		default:
-			currentListener = drawListener;
-			}
-		this.previousListener = currentListener;
-		canvas.addMouseListener(currentListener);
+			break;
+		}
 	}
 }
-//rename me
+//clear

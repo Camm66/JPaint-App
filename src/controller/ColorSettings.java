@@ -5,13 +5,13 @@ import viewInterfaces.IDialogChoice;
 import java.awt.Color;
 
 public class ColorSettings implements IDialogChoice {
-    private ColorAdapter currentColor;
+    private ColorAdapter currentColor = getDefaultChoice();
     
-    public void setCurrentColor(ColorAdapter currentColor) {
-    	if(currentColor == null)
+    public void setCurrentColor(ColorAdapter newColor) {
+    	if(newColor == null)
     		return;
     	else
-    		this.currentColor = currentColor;   
+    		this.currentColor = newColor;   
     	}
 
     public ColorAdapter getCurrentColor() {
@@ -44,7 +44,9 @@ public class ColorSettings implements IDialogChoice {
     }
 
     @Override
-    public Object getDefaultChoice() {
-        return currentColor;
+    public ColorAdapter getDefaultChoice() {
+        return new ColorAdapter("Red", Color.red);
     }
 }
+
+//clear

@@ -2,20 +2,17 @@ package controller;
 
 import viewInterfaces.IDialogChoice;
 
-import java.util.Arrays;
-
 public class ShadingSettings implements IDialogChoice {
-    private ShadingType currentShadingType;
+    private ShadingType currentShadingType = getDefaultChoice();
 
-    void setCurrentShadingType(ShadingType currentShade) {
-    	if(currentShade == null)
+    void setCurrentShadingType(ShadingType newShade) {
+    	if(newShade == null)
     		return;
     	else
-    		this.currentShadingType = currentShade;
+    		this.currentShadingType = newShade;
     }
 
-    public ShadingType getCurrentShadingType(
-    		) {
+    public ShadingType getCurrentShadingType() {
         return currentShadingType;
     }
 
@@ -36,6 +33,6 @@ public class ShadingSettings implements IDialogChoice {
 
     @Override
     public ShadingType getDefaultChoice() {
-        return currentShadingType;
+        return ShadingType.FILLED_IN;
     }
 }

@@ -1,34 +1,38 @@
 package controller;
 
-import java.awt.Color;
-
-import ControllerInterface.DeleteCommand;
+import ControllerInterface._CopyCommand;
+import ControllerInterface._DeleteCommand;
 import ControllerInterface.IPaintController;
-import ControllerInterface.RedoCommand;
-import ControllerInterface.UndoCommand;
+import ControllerInterface._PasteCommand;
+import ControllerInterface._RedoCommand;
+import ControllerInterface._UndoCommand;
 import viewInterfaces.EventName;
 import viewInterfaces.UIModule;
 
-public class JPaintController implements IPaintController {
+public class _JPaintController implements IPaintController {
     private final UIModule _uiModule;
     private final ApplicationSettings _settings;
+    private final ShapeList _shapeList;
 
-    public JPaintController(UIModule uiModule, ApplicationSettings settings){
-        _uiModule = uiModule;
+    public _JPaintController(UIModule ui, ApplicationSettings settings, ShapeList shapeList) {
+        _uiModule = ui;
         _settings = settings;
-    }
+        _shapeList = shapeList;
+	}
 
-    @Override
+	@Override
     public void run() {
         _uiModule.addEvent(EventName.CHOOSE_SHAPE, new SelectShapeTypeCommand(_settings.getDrawShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_PRIMARY_COLOR, new SelectPrimaryColorCommand( _settings.getPrimaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SECONDARY_COLOR, new SelectSecondaryColorCommand(_settings.getSecondaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SHADING_TYPE, new SelectShadingTypeCommand(_settings.getShadingTypeShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, new SelectMouseModeCommand(_settings.getMouseModeSettings(), _uiModule));
-        _uiModule.addEvent(EventName.UNDO, new UndoCommand(_uiModule));
-        _uiModule.addEvent(EventName.REDO, new RedoCommand(_uiModule));
-        //_uiModule.addEvent(EventName.COPY, new CopyCommand(_uiModule));
-        //_uiModule.addEvent(EventName.PASTE, new PasteCommand(_uiModule));
-        _uiModule.addEvent(EventName.DELETE, new DeleteCommand(_uiModule));
+        _uiModule.addEvent(EventName.UNDO, new _UndoCommand(_uiModule));
+        _uiModule.addEvent(EventName.REDO, new _RedoCommand(_uiModule));
+        _uiModule.addEvent(EventName.COPY, new _CopyCommand(_uiModule, _shapeList));
+        _uiModule.addEvent(EventName.PASTE, new _PasteCommand(_uiModule, _shapeList));
+        _uiModule.addEvent(EventName.DELETE, new _DeleteCommand(_shapeList));
     }
 }
+
+//****************************************

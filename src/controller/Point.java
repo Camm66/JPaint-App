@@ -16,6 +16,14 @@ public class Point {
 	public int getY(){
 		return this.Y;
 	}
+
+	public void setX(int x) {
+		this.X = x;
+	}
+	
+	public void setY(int y){
+		this.Y = y;
+	}
 }
 
-//created 7/26
+//clear

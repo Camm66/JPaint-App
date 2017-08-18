@@ -17,7 +17,7 @@ public class Gui implements UIModule {
     }
     
 	@Override
-	public void addEvent(EventName eventName, ICommand command) {
+	public void addEvent(EventName eventName, ICommand command){
 		JButton button = gui.getButton(eventName);
 		button.addActionListener((ActionEvent) -> command.run());
 		}

@@ -1,5 +1,4 @@
 package controller;
-import java.awt.Color;
 
 import viewInterfaces.UIModule;
 
@@ -17,4 +16,3 @@ public class SelectPrimaryColorCommand implements ControllerInterface.ICommand {
         _colorSettings.setCurrentColor(color);
         }
 }
-

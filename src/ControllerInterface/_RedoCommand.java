@@ -2,18 +2,16 @@ package ControllerInterface;
 
 import viewInterfaces.UIModule;
 
-public class DeleteCommand implements ICommand{
+public class _RedoCommand implements ICommand {
 	private final UIModule _uiModule;
 	
-	public DeleteCommand(UIModule uiModule){
+	public _RedoCommand(UIModule uiModule){
 		_uiModule = uiModule;
 	}
 	
 	@Override
 	public void run() {
-		System.out.println("delete pressed");
-		//CommandHistory.delete();
+		CommandHistory.redo();
 	}
-
-
 }
+//clear

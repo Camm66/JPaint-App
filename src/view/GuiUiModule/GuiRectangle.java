@@ -2,14 +2,17 @@ package view.GuiUiModule;
 
 import controller.ColorAdapter;
 import controller.Point;
-import controller.Shape;
+import controller.ShapeType;
+import model.Shape;
 import modelInterfaces.IViewShape;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class GuiRectangle implements IViewShape {
+public class GuiRectangle implements IViewShape, Serializable {
     private Shape shape;
     private PaintCanvas canvas;
+    private final ShapeType shapeType = ShapeType.RECTANGLE;
 
     public GuiRectangle(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
@@ -40,6 +43,14 @@ public class GuiRectangle implements IViewShape {
     public ColorAdapter getSecondaryColor() {
         return shape.getSecondaryColor();
     }
+
+	@Override
+	public Shape getShape() {
+		return this.shape;
+	}
+	
+	public ShapeType getShapeType(){
+		return shapeType;
+	}
 }
 
-//created 7/26

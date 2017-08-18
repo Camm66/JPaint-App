@@ -2,16 +2,14 @@ package ControllerInterface;
 
 import java.util.Stack;
 
-import view.GuiUiModule.GuiWindow;
 
 public class CommandHistory {
 	private static final Stack<IUndoable> undoStack = new Stack<IUndoable>();
 	private static final Stack<IUndoable> redoStack = new Stack<IUndoable>();
 	
-	public CommandHistory(){}
+	private CommandHistory(){}
 
 	public static void add(IUndoable cmd) {
-		System.out.println("Command recorded");
 		undoStack.push(cmd);
 		redoStack.clear();
 	}
@@ -35,11 +33,5 @@ public class CommandHistory {
 		}
 		return result;
 	}
-	
-	//public static void delete(){
-	
-		//IUndoable c = new newCommand(c, null);
-		//add()
-	//}
-	
 }
+//clear

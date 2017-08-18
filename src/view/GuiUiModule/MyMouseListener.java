@@ -5,12 +5,12 @@ import javax.swing.event.MouseInputAdapter;
 import controller.Point;
 import modelInterfaces.IStartAndEndPointCommand;
 
-public class DrawMouseListener extends MouseInputAdapter{
+public class MyMouseListener extends MouseInputAdapter{
 	private Point startingPoint;
 	private Point endingPoint;
-	private final IStartAndEndPointCommand command;
+	private IStartAndEndPointCommand command;
 	
-	public DrawMouseListener(IStartAndEndPointCommand command){
+	public MyMouseListener(IStartAndEndPointCommand command){
 		this.command = command;
 	}
 	
@@ -26,4 +26,11 @@ public class DrawMouseListener extends MouseInputAdapter{
 			e.printStackTrace();
 		}
 	}
+	
+	public void setMouseListenerCommandType(IStartAndEndPointCommand command){
+		this.command = command;
+	}
+
+	
+	
 }

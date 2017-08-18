@@ -5,3 +5,5 @@ public enum MouseMode {
     MOVE,
     SELECT
 }
+
+//clear

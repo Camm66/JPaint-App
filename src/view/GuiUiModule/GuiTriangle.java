@@ -3,15 +3,18 @@ package view.GuiUiModule;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
+import java.io.Serializable;
 
 import controller.ColorAdapter;
-import controller.Shape;
+import controller.ShapeType;
+import model.Shape;
 import modelInterfaces.IViewShape;
 
-public class GuiTriangle implements IViewShape {
+public class GuiTriangle implements IViewShape, Serializable{
     private Shape shape;
     private Polygon triangle;
     private PaintCanvas canvas;
+    private final ShapeType shapeType = ShapeType.TRIANGLE; // check
 
     public GuiTriangle(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
@@ -43,4 +46,13 @@ public class GuiTriangle implements IViewShape {
     public ColorAdapter getSecondaryColor() {
         return shape.getSecondaryColor();
     }
+
+	@Override
+	public Shape getShape() {
+		return this.shape;
+	}
+	
+	public ShapeType getShapeType(){
+		return shapeType;
+	}
 }

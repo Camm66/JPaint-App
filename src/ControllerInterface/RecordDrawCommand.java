@@ -1,13 +1,14 @@
 package ControllerInterface;
 
+import controller.ShapeList;
 import modelInterfaces.IDisplayableShape;
 
-public class newCommand implements IUndoable{
+public class RecordDrawCommand implements IUndoable{
 	private Object payLoad;
 	private final ShapeList shapeList;
 	
 	
-	public newCommand(Object Payload, ShapeList shapeList){
+	public RecordDrawCommand(Object Payload, ShapeList shapeList){
 		this.payLoad = Payload;
 		this.shapeList = shapeList;
 	}
@@ -18,20 +19,18 @@ public class newCommand implements IUndoable{
 
 	@Override
 	public void undo(){
-		shapeList.undoRecentObserver(payLoad);
+		shapeList.getObservers().remove(payLoad);
+		shapeList.updateCanvas();
 	}
 
 	@Override
 	public void redo() {
-		shapeList.redoRecentObserver(payLoad);
+		shapeList.getObservers().add((IDisplayableShape) payLoad);
+		shapeList.updateCanvas();
 		
 	}
 
 	@Override
-	public void delete() {
-		shapeList.undoRecentObserver(payLoad);
-	}
-	
-	
-
+	public void delete() {}
 }
+//clear

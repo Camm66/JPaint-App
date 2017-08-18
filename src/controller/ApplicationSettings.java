@@ -10,15 +10,7 @@ public class ApplicationSettings {
     private final ColorSettings shapeSecondaryColorSettings = new ColorSettings();
     private final ShadingSettings shapeShadingTypeSettings = new ShadingSettings();
     private final MouseModeSettings shapeMouseModeSettings = new MouseModeSettings();
-    
-    public ApplicationSettings(){
-    this.drawShapeSettings.setCurrentShape(ShapeType.ELLIPSE);
-    this.shapeShadingTypeSettings.setCurrentShadingType(ShadingType.OUTLINE_AND_FILLED_IN);
-    this.shapePrimaryColorSettings.setCurrentColor(new ColorAdapter("Blue", Color.blue));
-    this.shapeSecondaryColorSettings.setCurrentColor(new ColorAdapter("Red", Color.red));
-    //this.shapeMouseModeSettings.setInitialMouseMode(MouseMode.DRAW);
-    }
-    
+
     public ShapeSettings getDrawShapeSettings() {
         return drawShapeSettings;
     }
@@ -41,3 +33,4 @@ public class ApplicationSettings {
     
     
 }
+//clear

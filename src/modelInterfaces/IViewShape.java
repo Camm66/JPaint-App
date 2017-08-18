@@ -1,11 +1,16 @@
 package modelInterfaces;
-import controller.ColorAdapter;
+import java.io.Serializable;
 
-public interface IViewShape {
+import controller.ColorAdapter;
+import controller.ShapeType;
+import model.Shape;
+
+public interface IViewShape extends Serializable{
 	public void displayOutline(ColorAdapter color);
 	public void displayFilled(ColorAdapter color);
 	public ColorAdapter getPrimaryColor();
 	public ColorAdapter getSecondaryColor();
+	public Shape getShape();
+	public ShapeType getShapeType();
 }
 
-//created 7/26

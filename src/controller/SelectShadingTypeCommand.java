@@ -16,4 +16,3 @@ public class SelectShadingTypeCommand implements ControllerInterface.ICommand {
         _shadeSettings.setCurrentShadingType(shadeChoice);
     }
 }
-

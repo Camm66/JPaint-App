@@ -2,7 +2,7 @@ package view.GuiUiModule;
 
 import java.awt.Polygon;
 
-import controller.Shape;
+import model.Shape;
 
 public class TriangleShapeCreator extends Polygon {
 	private int p1X;
@@ -22,9 +22,9 @@ public class TriangleShapeCreator extends Polygon {
     }
     
     private void createTriangle(){
-    	if((p2X > p1X))
+    	if((p2X < p1X))
     		angle = (Math.atan2((p2X - p1X), (p1Y - p2Y)) * 180 / Math.PI);
-    	else if((p2X < p1X))//above 180 degrees to 360/0
+    	else if((p2X > p1X))//above 180 degrees to 360/0
     		angle = 360 - (Math.atan2((p1X - p2X), (p1Y - p2Y)) * 180 / Math.PI);
  
     	int p3X = (int) ((p1X - p2X) * Math.cos(angle) - (p1Y - p2Y) * Math.sin(angle) + p2X);

@@ -1,7 +1,7 @@
 package modelInterfaces;
 
-import controller.Shape;
 import controller.ShapeType;
+import model.Shape;
 
 public interface IViewShapeFactory {
 

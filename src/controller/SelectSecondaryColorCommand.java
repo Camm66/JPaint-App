@@ -1,5 +1,4 @@
 package controller;
-import java.awt.Color;
 
 import viewInterfaces.UIModule;
 

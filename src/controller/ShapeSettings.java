@@ -2,16 +2,14 @@ package controller;
 
 import viewInterfaces.IDialogChoice;
 
-import java.util.Arrays;
-
 public class ShapeSettings implements IDialogChoice {
-    private ShapeType currentShape;
+    private ShapeType currentShape = getDefaultChoice();
 
-    void setCurrentShape(ShapeType currentShape) {
-    	if(currentShape == null)
+    void setCurrentShape(ShapeType newShape) {
+    	if(newShape == null)
     		return;
     	else
-    		this.currentShape = currentShape;
+    		this.currentShape = newShape;
     }
 
     public ShapeType getCurrentShape() {
@@ -35,6 +33,7 @@ public class ShapeSettings implements IDialogChoice {
 
     @Override
     public ShapeType getDefaultChoice() {
-        return currentShape;
+        return ShapeType.ELLIPSE;
     }
 }
+//clear

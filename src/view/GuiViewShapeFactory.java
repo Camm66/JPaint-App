@@ -1,7 +1,7 @@
 package view;
 
-import controller.Shape;
 import controller.ShapeType;
+import model.Shape;
 import modelInterfaces.IViewShape;
 import modelInterfaces.IViewShapeFactory;
 import view.GuiUiModule.GuiEllipse;
@@ -29,5 +29,4 @@ public class GuiViewShapeFactory implements IViewShapeFactory{
 				throw new Exception("Incorrect ViewShape Identified");
 		}
 	}
-
 }

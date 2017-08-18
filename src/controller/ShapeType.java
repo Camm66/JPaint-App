@@ -5,3 +5,4 @@ public enum ShapeType {
     RECTANGLE,
     TRIANGLE
 }
+//clear

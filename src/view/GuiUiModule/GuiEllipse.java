@@ -2,14 +2,17 @@ package view.GuiUiModule;
 
 import controller.ColorAdapter;
 import controller.Point;
-import controller.Shape;
+import controller.ShapeType;
+import model.Shape;
 import modelInterfaces.IViewShape;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class GuiEllipse implements IViewShape {
+public class GuiEllipse implements IViewShape, Serializable {
     private Shape shape;
     private PaintCanvas canvas;
+    private final ShapeType shapeType = ShapeType.ELLIPSE;
 
     public GuiEllipse(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
@@ -40,6 +43,17 @@ public class GuiEllipse implements IViewShape {
     public ColorAdapter getSecondaryColor() {
         return shape.getSecondaryColor();
     }
-}
+    
+    public Point getStartPoint(){
+    	return shape.getStartPoint();
+    }
+    
+    public ShapeType getShapeType(){
+    	return shapeType;
+    }
 
-//created 7/26
+	@Override
+	public Shape getShape() {
+		return this.shape;
+	}
+}

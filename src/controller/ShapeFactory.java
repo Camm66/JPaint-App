@@ -1,8 +1,9 @@
-package model;
+package controller;
 
 import java.awt.Color;
 
 import controller.*;
+import model.Shape;
 import modelInterfaces.*;
 
 public class ShapeFactory implements IShapeFactory {
@@ -19,12 +20,13 @@ public class ShapeFactory implements IShapeFactory {
 	}
 	
 	@Override
-	public void create(Point startingPoint, Point endingPoint) throws Exception {
+	public IDisplayableShape create(Point startingPoint, Point endingPoint) throws Exception {
 		Point adjustedStartingPoint = getAdjustedStartingPoint(startingPoint, endingPoint);
 		Point adjustedEndingPoint = getAdjustedEndingPoint(startingPoint, endingPoint);
 		IViewShape viewShape = getIViewShape(adjustedStartingPoint, adjustedEndingPoint);
 		IDisplayableShape displayableShape = getIDisplayableShape(viewShape);
 		shapeList.addToList(displayableShape);
+		return displayableShape;
 		
 	}
 
@@ -56,8 +58,6 @@ public class ShapeFactory implements IShapeFactory {
 	private Shape createShape(Point startingPoint, Point endingPoint){
 		ColorAdapter primaryColor = settings.getPrimaryColorShapeSettings().getCurrentColor();
 		ColorAdapter secondaryColor = settings.getSecondaryColorShapeSettings().getCurrentColor();
-		return new Shape(primaryColor, secondaryColor, startingPoint, endingPoint);
-		
+		return new Shape(primaryColor, secondaryColor, startingPoint, endingPoint);	
 	}
-	
 }

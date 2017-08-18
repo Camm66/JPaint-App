@@ -2,20 +2,21 @@ package controller;
 
 import viewInterfaces.IDialogChoice;
 
-import java.util.Arrays;
-
 import view.MouseModeFactory;
 
 public class MouseModeSettings implements IDialogChoice {
-    private MouseMode currentMouseMode;
+    private MouseMode currentMouseMode = getDefaultChoice();
     private MouseModeFactory mouseModeFactory;
 
 
     
-    void setCurrentMouseMode(MouseMode currentMode){
-        this.currentMouseMode = currentMode;
-        mouseModeFactory.createMouseMode(currentMode);
-        
+   public void setCurrentMouseMode(MouseMode newMode){
+	   	if(newMode == null)
+	   		this.currentMouseMode = getDefaultChoice();
+	   	else {
+	   		this.currentMouseMode = newMode;
+	   		mouseModeFactory.setMouseMode(newMode);
+	   	}
     }
 
     MouseMode getCurrentMouseMode() {
@@ -47,7 +48,8 @@ public class MouseModeSettings implements IDialogChoice {
     }
 
     @Override
-    public Object getDefaultChoice() {
-        return currentMouseMode;
+    public MouseMode getDefaultChoice() {
+        return MouseMode.DRAW;
     }
 }
+//clear
