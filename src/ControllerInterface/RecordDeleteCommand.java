@@ -2,14 +2,14 @@ package ControllerInterface;
 
 import java.util.List;
 
-import controller.ShapeList;
 import modelInterfaces.IDisplayableShape;
+import modelInterfaces.IShapeList;
 
 public class RecordDeleteCommand implements IUndoable{
 	private List<IDisplayableShape> payLoad;
-	private final ShapeList shapeList;
+	private final IShapeList shapeList;
 	
-	public RecordDeleteCommand(List<IDisplayableShape> foundShapes, ShapeList shapeList) {
+	public RecordDeleteCommand(List<IDisplayableShape> foundShapes, IShapeList shapeList) {
 		this.payLoad = foundShapes;
 		this.shapeList = shapeList;
 	}
@@ -33,4 +33,3 @@ public class RecordDeleteCommand implements IUndoable{
 		shapeList.updateCanvas();
 	}
 }
-//clear

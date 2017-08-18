@@ -3,36 +3,31 @@ package ControllerInterface;
 import java.util.List;
 
 import controller.Point;
-import controller.ShapeFactory;
-import controller.ShapeList;
-import model.Shape;
 import modelInterfaces.IDisplayableShape;
+import modelInterfaces.IShapeList;
 import modelInterfaces.IStartAndEndPointCommand;
 
 public class _SelectShapesCommand implements IStartAndEndPointCommand {
-	private final ShapeList _shapeList;
-	private final ShapeFactory _shapeFactory;
+	private final IShapeList _shapeList;
 		
-	public _SelectShapesCommand(ShapeList shapeList, ShapeFactory shapeFactory){
+	public _SelectShapesCommand(IShapeList shapeList){
 		this._shapeList = shapeList;
-		this._shapeFactory = shapeFactory;
 	}
 	@Override
 	public void run(Point startingPoint, Point endingPoint) throws Exception {
-		List<IDisplayableShape> foundShapes = _shapeList.findSelectedShape(startingPoint, endingPoint);
-		
 		if(startingPoint.getX() == endingPoint.getX() && startingPoint.getY() == endingPoint.getY())
 			_shapeList.setSelectionPoint(endingPoint);
 		else
 			_shapeList.setSelectionArea(startingPoint, endingPoint);
 		
+		
+		List<IDisplayableShape> foundShapes = _shapeList.findSelectedShape(startingPoint, endingPoint);
 		if(foundShapes != null){
 			for(IDisplayableShape foundShape : foundShapes){
 				_shapeList.getObservers().remove(foundShape);
 				_shapeList.addToList(foundShape);
 				}
 			_shapeList.setCurrentlySelectedShape(foundShapes);
-
 		}
 	}
 

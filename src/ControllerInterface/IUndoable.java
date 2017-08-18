@@ -5,4 +5,3 @@ public interface IUndoable {
 	void redo();
 	void delete();
 }
-//clear

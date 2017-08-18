@@ -7,9 +7,8 @@ import model.Shape;
 import modelInterfaces.IViewShape;
 
 import java.awt.*;
-import java.io.Serializable;
 
-public class GuiEllipse implements IViewShape, Serializable {
+public class GuiEllipse implements IViewShape{
     private Shape shape;
     private PaintCanvas canvas;
     private final ShapeType shapeType = ShapeType.ELLIPSE;
@@ -48,12 +47,12 @@ public class GuiEllipse implements IViewShape, Serializable {
     	return shape.getStartPoint();
     }
     
-    public ShapeType getShapeType(){
-    	return shapeType;
-    }
-
 	@Override
 	public Shape getShape() {
 		return this.shape;
 	}
+	
+    public ShapeType getShapeType(){
+    	return shapeType;
+    }
 }

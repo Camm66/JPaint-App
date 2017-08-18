@@ -10,7 +10,6 @@ import javax.swing.JComponent;
 public class PaintCanvas extends JComponent implements IShapeListObserver {
 	private MyMouseListener mouseListener;
 	
-	
 	public void update(List<IDisplayableShape> shapes){
 		for(IDisplayableShape shape : shapes){
 			shape.display();

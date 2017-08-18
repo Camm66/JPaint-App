@@ -30,12 +30,5 @@ public class ColorAdapter {
 	
 	public String toString(){
 		return colorName;
-	}
-	
-	
+	}	
 }
-//created 7/26
-/*This Implements an AdapterPattern 
- * we can now assign a String name, and also
- * allow for functionality to be added later
- */

@@ -1,8 +1,11 @@
-package controller;
+package view;
 
-import java.awt.Color;
 
-import controller.*;
+import controller.ApplicationSettings;
+import controller.ColorAdapter;
+import controller.Point;
+import controller.ShadingType;
+import controller.ShapeType;
 import model.Shape;
 import modelInterfaces.*;
 

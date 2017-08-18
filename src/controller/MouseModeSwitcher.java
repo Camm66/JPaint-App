@@ -1,22 +1,22 @@
-package view;
-
-import java.awt.event.MouseListener;
+package controller;
 
 import ControllerInterface.*;
 import controller.*;
 import model.*;
-import modelInterfaces.IStartAndEndPointCommand;
+import view.ShapeCloneFactory;
+import view.ShapeFactory;
+import view.ShapeList;
 import view.GuiUiModule.*;
 
-public class MouseModeFactory {
+public class MouseModeSwitcher {
 	private final MyMouseListener mouseListener;
 	private final _CreateShapeCommand _createShapeCommand;
 	private final _SelectShapesCommand _selectShapeCommand;
 	private final _MoveShapesCommand _moveShapeCommand;
 	
-	public MouseModeFactory(ShapeFactory shapeFactory, ShapeList shapeList, PaintCanvas canvas, ShapeCloneFactory shapeCloneFactory){
+	public MouseModeSwitcher(ShapeFactory shapeFactory, ShapeList shapeList, PaintCanvas canvas, ShapeCloneFactory shapeCloneFactory){
 		this._createShapeCommand = new _CreateShapeCommand(shapeList, shapeFactory);
-		this._selectShapeCommand = new _SelectShapesCommand(shapeList, shapeFactory);
+		this._selectShapeCommand = new _SelectShapesCommand(shapeList);
 		this._moveShapeCommand = new _MoveShapesCommand(shapeList, shapeCloneFactory);
 		this.mouseListener = new MyMouseListener(_createShapeCommand);
 		canvas.addMouseListener(mouseListener);
@@ -37,4 +37,3 @@ public class MouseModeFactory {
 		}
 	}
 }
-//clear

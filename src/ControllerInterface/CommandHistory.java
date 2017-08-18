@@ -34,4 +34,3 @@ public class CommandHistory {
 		return result;
 	}
 }
-//clear

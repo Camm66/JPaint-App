@@ -2,9 +2,7 @@ package view;
 
 
 import controller.ApplicationSettings;
-import controller.ShapeFactory;
-import controller.ShapeList;
-import model.ShapeCloneFactory;
+import controller.MouseModeSwitcher;
 import view.CmdUiModule.Cmd;
 import view.GuiUiModule.Gui;
 import viewInterfaces.InvalidUIException;
@@ -32,7 +30,7 @@ public class UIFactory {
                 ShapeFactory shapeFactory = new ShapeFactory(settings, shapeList, viewShapeFactory, displayableShapeFactory);
                 ShapeCloneFactory shapeCloneFactory = new ShapeCloneFactory(viewShapeFactory, displayableShapeFactory);
                 shapeList.setShapeCloneFactory(shapeCloneFactory);
-                MouseModeFactory mouseModeFactory = new MouseModeFactory(shapeFactory, shapeList, canvas, shapeCloneFactory);
+                MouseModeSwitcher mouseModeFactory = new MouseModeSwitcher(shapeFactory, shapeList, canvas, shapeCloneFactory);
                 settings.getMouseModeSettings().setMouseModeFactory(mouseModeFactory);
                 break;
             default:

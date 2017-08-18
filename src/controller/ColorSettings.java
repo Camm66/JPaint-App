@@ -23,7 +23,9 @@ public class ColorSettings implements IDialogChoice {
     public static ColorAdapter[] colorChoices = {
     		new ColorAdapter("Red", Color.red), 
     		new ColorAdapter("Blue", Color.blue),
-    		new ColorAdapter("Green", Color.green)
+    		new ColorAdapter("Green", Color.green),
+    		new ColorAdapter("Black", Color.black),
+    		new ColorAdapter("Pink", Color.pink)
     }; 
     
     
@@ -48,5 +50,3 @@ public class ColorSettings implements IDialogChoice {
         return new ColorAdapter("Red", Color.red);
     }
 }
-
-//clear

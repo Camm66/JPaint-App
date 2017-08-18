@@ -1,9 +1,10 @@
-package model;
+package view;
 
 import controller.ColorAdapter;
 import controller.Point;
 import controller.ShadingType;
 import controller.ShapeType;
+import model.Shape;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IDisplayableShapeFactory;
 import modelInterfaces.IViewShape;
@@ -12,14 +13,13 @@ import modelInterfaces.IViewShapeFactory;
 public class ShapeCloneFactory {
 	private final IViewShapeFactory viewShapeFactory;
 	private final IDisplayableShapeFactory displayableShapeFactory;
-	//private static ShapeCloneFactory shapeCloneFactory = new ShapeCloneFactory();
 	
 	public ShapeCloneFactory(IViewShapeFactory viewShapeFactory, IDisplayableShapeFactory displayableShapeFactory){
 		this.viewShapeFactory = viewShapeFactory;
 		this.displayableShapeFactory = displayableShapeFactory;
 	}
 	
-	public IDisplayableShape createClone(IDisplayableShape shapeToCopy, Point startingPoint, Point endingPoint)throws Exception{
+	public IDisplayableShape create(IDisplayableShape shapeToCopy, Point startingPoint, Point endingPoint)throws Exception{
 		Point adjustedStartingPoint = getAdjustedStartingPoint(startingPoint, endingPoint);
 		Point adjustedEndingPoint = getAdjustedEndingPoint(startingPoint, endingPoint);
 		IViewShape viewShape = getIViewShape(shapeToCopy, adjustedStartingPoint, adjustedEndingPoint);

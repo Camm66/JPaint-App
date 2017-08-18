@@ -6,15 +6,17 @@ import ControllerInterface.IPaintController;
 import ControllerInterface._PasteCommand;
 import ControllerInterface._RedoCommand;
 import ControllerInterface._UndoCommand;
+import modelInterfaces.IShapeList;
+import view.ShapeList;
 import viewInterfaces.EventName;
 import viewInterfaces.UIModule;
 
 public class _JPaintController implements IPaintController {
     private final UIModule _uiModule;
     private final ApplicationSettings _settings;
-    private final ShapeList _shapeList;
+    private final IShapeList _shapeList;
 
-    public _JPaintController(UIModule ui, ApplicationSettings settings, ShapeList shapeList) {
+    public _JPaintController(UIModule ui, ApplicationSettings settings, IShapeList shapeList) {
         _uiModule = ui;
         _settings = settings;
         _shapeList = shapeList;
@@ -27,12 +29,11 @@ public class _JPaintController implements IPaintController {
         _uiModule.addEvent(EventName.CHOOSE_SECONDARY_COLOR, new SelectSecondaryColorCommand(_settings.getSecondaryColorShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_SHADING_TYPE, new SelectShadingTypeCommand(_settings.getShadingTypeShapeSettings(), _uiModule));
         _uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, new SelectMouseModeCommand(_settings.getMouseModeSettings(), _uiModule));
-        _uiModule.addEvent(EventName.UNDO, new _UndoCommand(_uiModule));
-        _uiModule.addEvent(EventName.REDO, new _RedoCommand(_uiModule));
-        _uiModule.addEvent(EventName.COPY, new _CopyCommand(_uiModule, _shapeList));
-        _uiModule.addEvent(EventName.PASTE, new _PasteCommand(_uiModule, _shapeList));
-        _uiModule.addEvent(EventName.DELETE, new _DeleteCommand(_shapeList));
+        _uiModule.addEvent(EventName.UNDO, new _UndoCommand());
+        _uiModule.addEvent(EventName.REDO, new _RedoCommand());
+        _uiModule.addEvent(EventName.COPY, new _CopyCommand(_shapeList));
+        _uiModule.addEvent(EventName.PASTE, new _PasteCommand(_shapeList));
+        _uiModule.addEvent(EventName.DELETE, new _DeleteCommand((ShapeList) _shapeList));
     }
 }
 
-//****************************************

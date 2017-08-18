@@ -1,6 +1,4 @@
 package modelInterfaces;
 
-import java.io.Serializable;
-
-public interface IShape extends Serializable{
+public interface IShape {
 }

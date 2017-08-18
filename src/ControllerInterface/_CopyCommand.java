@@ -1,14 +1,11 @@
 package ControllerInterface;
 
-import controller.ShapeList;
-import viewInterfaces.UIModule;
+import modelInterfaces.IShapeList;
 
 public class _CopyCommand implements ICommand{
-	private final UIModule _uiModule;
-	private final ShapeList _shapeList;
+	private final IShapeList _shapeList;
 	
-	public _CopyCommand(UIModule uiModule, ShapeList shapeList){
-		this._uiModule = uiModule;
+	public _CopyCommand(IShapeList shapeList){
 		this._shapeList = shapeList;
 	}
 
@@ -16,8 +13,6 @@ public class _CopyCommand implements ICommand{
 	public void run() {
 		if(_shapeList.getCurrentlySelectedShape() != null){
 			_shapeList.setCurrentlyCopiedShape(_shapeList.getCurrentlySelectedShape());
-			_shapeList.setSelectionPoint(null);
 		}
 	}
 }
-//clear;

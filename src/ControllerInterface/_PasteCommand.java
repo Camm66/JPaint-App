@@ -1,28 +1,19 @@
 package ControllerInterface;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import controller.Point;
-import controller.ShapeList;
 import modelInterfaces.IDisplayableShape;
-import modelInterfaces.IStartAndEndPointCommand;
-import viewInterfaces.UIModule;
+import modelInterfaces.IShapeList;
 
 public class _PasteCommand implements ICommand{
-	private final UIModule _uiModule;
-	private final ShapeList _shapeList;
-
+	private final IShapeList _shapeList;
 	
-	public _PasteCommand(UIModule uiModule, ShapeList shapeList){
-		this._uiModule = uiModule;
+	public _PasteCommand(IShapeList shapeList){
 		this._shapeList = shapeList;
 	}
-
+	
 	public void run(){
 		if(_shapeList.getCurrentlyCopiedShape() != null){
 			
@@ -38,7 +29,7 @@ public class _PasteCommand implements ICommand{
 					Point newStartPoint = _shapeList.getStartNewPoint(copiedShape, newEndPoint);
 					IDisplayableShape pastedShape = copiedShape;
 					try {
-						pastedShape = _shapeList.getShapeCloneFactory().createClone(copiedShape, newStartPoint, newEndPoint);
+						pastedShape = _shapeList.getShapeCloneFactory().create(copiedShape, newStartPoint, newEndPoint);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}finally{
@@ -52,7 +43,7 @@ public class _PasteCommand implements ICommand{
 					Point newStartPoint = _shapeList.getStartNewPoint(copiedShape, endPoint);
 					IDisplayableShape pastedShape = copiedShape;
 					try {
-						pastedShape = _shapeList.getShapeCloneFactory().createClone(copiedShape, newStartPoint, endPoint);
+						pastedShape = _shapeList.getShapeCloneFactory().create(copiedShape, newStartPoint, endPoint);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}finally{

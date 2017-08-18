@@ -3,23 +3,22 @@ package view.GuiUiModule;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
-import java.io.Serializable;
 
 import controller.ColorAdapter;
 import controller.ShapeType;
 import model.Shape;
 import modelInterfaces.IViewShape;
 
-public class GuiTriangle implements IViewShape, Serializable{
+public class GuiTriangle implements IViewShape {
     private Shape shape;
     private Polygon triangle;
     private PaintCanvas canvas;
-    private final ShapeType shapeType = ShapeType.TRIANGLE; // check
+    private final ShapeType shapeType = ShapeType.TRIANGLE;
 
     public GuiTriangle(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
         this.canvas = canvas;
-        this.triangle = (new TriangleShapeCreator(shape)).getTriangle();
+        this.triangle = (new TriangleShapeCreator_NeedsWork(shape)).getTriangle();
     }
 
     @Override

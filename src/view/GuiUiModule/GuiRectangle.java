@@ -1,15 +1,12 @@
 package view.GuiUiModule;
 
 import controller.ColorAdapter;
-import controller.Point;
 import controller.ShapeType;
 import model.Shape;
 import modelInterfaces.IViewShape;
-
 import java.awt.*;
-import java.io.Serializable;
 
-public class GuiRectangle implements IViewShape, Serializable {
+public class GuiRectangle implements IViewShape{
     private Shape shape;
     private PaintCanvas canvas;
     private final ShapeType shapeType = ShapeType.RECTANGLE;

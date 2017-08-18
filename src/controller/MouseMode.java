@@ -6,4 +6,3 @@ public enum MouseMode {
     SELECT
 }
 
-//clear

@@ -1,9 +1,5 @@
 package controller;
 
-import java.awt.Color;
-
-import viewInterfaces.IDialogChoice;
-
 public class ApplicationSettings {
     private final ShapeSettings drawShapeSettings = new ShapeSettings();
     private final ColorSettings shapePrimaryColorSettings = new ColorSettings();
@@ -33,4 +29,3 @@ public class ApplicationSettings {
     
     
 }
-//clear

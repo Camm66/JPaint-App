@@ -1,7 +1,7 @@
 package main;
 
 import controller.ApplicationSettings;
-import controller.ShapeList;
+import view.ShapeList;
 import view.UIFactory;
 import view.UIType;
 import viewInterfaces.InvalidUIException;

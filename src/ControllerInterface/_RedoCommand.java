@@ -1,17 +1,11 @@
 package ControllerInterface;
 
-import viewInterfaces.UIModule;
-
 public class _RedoCommand implements ICommand {
-	private final UIModule _uiModule;
 	
-	public _RedoCommand(UIModule uiModule){
-		_uiModule = uiModule;
-	}
+	public _RedoCommand(){}
 	
 	@Override
 	public void run() {
 		CommandHistory.redo();
 	}
 }
-//clear

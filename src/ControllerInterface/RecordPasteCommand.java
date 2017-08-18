@@ -2,14 +2,14 @@ package ControllerInterface;
 
 import java.util.List;
 
-import controller.ShapeList;
 import modelInterfaces.IDisplayableShape;
+import modelInterfaces.IShapeList;
 
 public class RecordPasteCommand implements IUndoable{
 	private List<IDisplayableShape> payLoad;
-	private ShapeList shapeList;
+	private IShapeList shapeList;
 	
-	public RecordPasteCommand(List<IDisplayableShape> payLoad, ShapeList shapeList) {
+	public RecordPasteCommand(List<IDisplayableShape> payLoad, IShapeList shapeList) {
 		this.payLoad = payLoad;
 		this.shapeList = shapeList;
 	}
@@ -30,5 +30,4 @@ public class RecordPasteCommand implements IUndoable{
 
 	@Override
 	public void delete() {}
-//clear
 }

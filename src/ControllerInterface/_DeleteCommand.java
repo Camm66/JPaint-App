@@ -2,9 +2,9 @@ package ControllerInterface;
 
 import java.util.List;
 
-import controller.ShapeList;
 import modelInterfaces.IDisplayableShape;
-import viewInterfaces.UIModule;
+import modelInterfaces.IShapeList;
+import view.ShapeList;
 
 public class _DeleteCommand implements ICommand{
 	private final ShapeList _shapeList;
@@ -24,4 +24,3 @@ public class _DeleteCommand implements ICommand{
 		}
 	}
 }
-//clear

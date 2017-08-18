@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controller.Point;
-import controller.ShapeList;
-import model.ShapeCloneFactory;
 import modelInterfaces.IDisplayableShape;
+import modelInterfaces.IShapeList;
 import modelInterfaces.IStartAndEndPointCommand;
+import view.ShapeCloneFactory;
 
 
 public class _MoveShapesCommand implements IStartAndEndPointCommand {
-	private final ShapeList _shapeList;
+	private final IShapeList _shapeList;
 	private final ShapeCloneFactory _shapeCloneFactory;
 
 	
-	public _MoveShapesCommand(ShapeList shapeList, ShapeCloneFactory shapeCloneFactory){
+	public _MoveShapesCommand(IShapeList shapeList, ShapeCloneFactory shapeCloneFactory){
 		this._shapeList = shapeList;
 		this._shapeCloneFactory = shapeCloneFactory;
 	}
@@ -27,7 +27,7 @@ public class _MoveShapesCommand implements IStartAndEndPointCommand {
 		
 			for(IDisplayableShape foundShape : foundShapes){
 				Point newStartPoint =  _shapeList.moveSelectedShape(foundShape, endingPoint);
-				IDisplayableShape movedShape = _shapeCloneFactory.createClone(foundShape, newStartPoint, endingPoint);
+				IDisplayableShape movedShape = _shapeCloneFactory.create(foundShape, newStartPoint, endingPoint);
 				movedShapes.add(movedShape);
 				_shapeList.addToList(movedShape);
 				CommandHistory.add(new RecordMoveCommand(foundShape, movedShape, _shapeList));
@@ -36,4 +36,3 @@ public class _MoveShapesCommand implements IStartAndEndPointCommand {
 		}
 	}
 }
-//clear

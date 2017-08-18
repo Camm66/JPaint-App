@@ -1,13 +1,13 @@
 package ControllerInterface;
 
-import controller.ShapeList;
+import modelInterfaces.IShapeList;
 
 public class RecordSelectCommand implements IUndoable{
 	private Object payLoad;
-	private final ShapeList shapeList;
+	private final IShapeList shapeList;
 	
 	
-	public RecordSelectCommand(Object Payload, ShapeList shapeList){
+	public RecordSelectCommand(Object Payload, IShapeList shapeList){
 		this.payLoad = Payload;
 		this.shapeList = shapeList;
 	}
@@ -28,4 +28,3 @@ public class RecordSelectCommand implements IUndoable{
 		shapeList.updateCanvas();
 	}
 }
-//clear

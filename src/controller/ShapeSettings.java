@@ -36,4 +36,3 @@ public class ShapeSettings implements IDialogChoice {
         return ShapeType.ELLIPSE;
     }
 }
-//clear

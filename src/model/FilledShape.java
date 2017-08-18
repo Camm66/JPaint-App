@@ -1,11 +1,9 @@
 package model;
 
-import java.io.Serializable;
-
 import controller.ShadingType;
 import modelInterfaces.*;
 
-public class FilledShape implements IDisplayableShape, Serializable{
+public class FilledShape implements IDisplayableShape {
 	private final IViewShape viewShape;
 	private final ShadingType shadingType = ShadingType.FILLED_IN;
 	
@@ -13,17 +11,18 @@ public class FilledShape implements IDisplayableShape, Serializable{
 		this.viewShape = viewShape;
 	}
 
-	
+	@Override
 	public void display(){
 		viewShape.displayFilled(viewShape.getPrimaryColor());
-	}
-
-	public ShadingType getShadingType(){
-		return shadingType;
 	}
 
 	@Override
 	public IViewShape getShape() {
 		return viewShape;
+	}
+
+	@Override
+	public ShadingType getShadingType(){
+		return shadingType;
 	}
 }

@@ -2,6 +2,7 @@ package main;
 
 import ControllerInterface.IPaintController;
 import controller.*;
+import view.ShapeList;
 import view.UIFactory;
 import view.UIType;
 import viewInterfaces.UIModule;

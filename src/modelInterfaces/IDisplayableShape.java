@@ -1,12 +1,11 @@
 package modelInterfaces;
 
-import java.io.Serializable;
+import controller.ShadingType;
 
-public interface IDisplayableShape extends Serializable{
+public interface IDisplayableShape{
 	public void display();
 
 	public IViewShape getShape();
-
-	public controller.ShadingType getShadingType(); // check
-
+	
+	public ShadingType getShadingType();
 }
