@@ -1,18 +1,19 @@
-package ControllerInterface;
+package controller;
 
 import java.util.List;
 
-import controller.Point;
+import ControllerInterface.ICopyStrategy;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
 
-public class SingleShapeCopier implements ICopyStrategy{
+public class MultipleShapeCopier implements ICopyStrategy{
 	public List<IDisplayableShape> pasteCopiedShape(List<IDisplayableShape> copiedShapes, List<IDisplayableShape> pastedShapes, Point endPoint, IShapeList shapeList){
 		for(IDisplayableShape copiedShape : copiedShapes){
-			Point newStartPoint = shapeList.getStartNewPoint(copiedShape, endPoint);
+			Point newEndPoint = shapeList.getNewEndPoint(copiedShape, endPoint);
+			Point newStartPoint = shapeList.getStartNewPoint(copiedShape, newEndPoint);
 			IDisplayableShape pastedShape = copiedShape;
 			try {
-				pastedShape = shapeList.getShapeCloneFactory().create(copiedShape, newStartPoint, endPoint);
+				pastedShape = shapeList.getShapeCloneFactory().create(copiedShape, newStartPoint, newEndPoint);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally{
@@ -22,5 +23,5 @@ public class SingleShapeCopier implements ICopyStrategy{
 		}
 		return pastedShapes;
 	}
-}
+}	
 

@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ControllerInterface.CommandHistory;
-import ControllerInterface.CopyStrategyFactory;
 import ControllerInterface.ICommand;
 import ControllerInterface.RecordPasteCommand;
-import ControllerInterface.ShapeCopier;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
 

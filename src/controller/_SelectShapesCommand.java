@@ -2,9 +2,9 @@ package controller;
 
 import java.util.List;
 
+import ControllerInterface.IStartAndEndPointCommand;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
-import modelInterfaces.IStartAndEndPointCommand;
 
 public class _SelectShapesCommand implements IStartAndEndPointCommand {
 	private final IShapeList _shapeList;

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ControllerInterface.CommandHistory;
+import ControllerInterface.IStartAndEndPointCommand;
 import ControllerInterface.RecordMoveCommand;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
-import modelInterfaces.IStartAndEndPointCommand;
 import view.ShapeCloneFactory;
 
 

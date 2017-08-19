@@ -18,7 +18,7 @@ public class GuiTriangle implements IViewShape {
     public GuiTriangle(Shape shape, PaintCanvas canvas) {
         this.shape = shape;
         this.canvas = canvas;
-        this.triangle = (new TriangleShapeCreator_NeedsWork(shape)).getTriangle();
+        this.triangle = (new TriangleShapeCreator(shape)).getTriangle();
     }
 
     @Override

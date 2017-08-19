@@ -1,6 +1,7 @@
 package controller;
 
 import ControllerInterface.CommandHistory;
+import ControllerInterface.IStartAndEndPointCommand;
 import ControllerInterface.RecordDrawCommand;
 import modelInterfaces.*;
 

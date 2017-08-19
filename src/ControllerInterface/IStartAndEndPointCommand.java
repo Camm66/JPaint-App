@@ -1,4 +1,4 @@
-package modelInterfaces;
+package ControllerInterface;
 
 import controller.Point;
 

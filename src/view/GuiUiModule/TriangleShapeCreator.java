@@ -4,7 +4,7 @@ import java.awt.Polygon;
 
 import model.Shape;
 
-public class TriangleShapeCreator_NeedsWork extends Polygon {
+public class TriangleShapeCreator extends Polygon {
 	private int p1X;
     private int p1Y;
     private int p2X;
@@ -12,7 +12,7 @@ public class TriangleShapeCreator_NeedsWork extends Polygon {
     private double angle;
     private Polygon myTriangle;
     
-    public TriangleShapeCreator_NeedsWork(Shape shape){
+    public TriangleShapeCreator(Shape shape){
     	this.p1X = shape.getStartX();
     	this.p1Y = shape.getStartY();
     	this.p2X = shape.getEndX();

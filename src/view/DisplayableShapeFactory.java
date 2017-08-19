@@ -1,6 +1,9 @@
-package model;
+package view;
 
 import controller.ShadingType;
+import model.FilledAndOutlineShape;
+import model.FilledShape;
+import model.OutlineShape;
 import modelInterfaces.*;
 
 public class DisplayableShapeFactory implements IDisplayableShapeFactory {

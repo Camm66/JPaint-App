@@ -1,8 +1,5 @@
 package controller;
 
-import ControllerInterface.*;
-import controller.*;
-import model.*;
 import view.ShapeCloneFactory;
 import view.ShapeFactory;
 import view.ShapeList;

@@ -2,7 +2,7 @@ package main;
 
 import ControllerInterface.IPaintController;
 import controller.*;
-import model.DisplayableShapeFactory;
+import view.DisplayableShapeFactory;
 import view.GuiViewShapeFactory;
 import view.ShapeCloneFactory;
 import view.ShapeFactory;

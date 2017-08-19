@@ -1,4 +1,4 @@
-package ControllerInterface;
+package controller;
 
 import modelInterfaces.IShapeList;
 

@@ -87,17 +87,6 @@ public class ShapeList implements IShapeList {
 	public void setCurrentlyCopiedShape(List<IDisplayableShape> copiedShapes){
 		this.copiedShapes = copiedShapes;
 	}
-
-	
-////////////////////////////////////////////////////////////////////////////////////////
-	public Point moveSelectedShape(IDisplayableShape shape, Point endPoint){
-		observers.remove(shape);
-		return getStartNewPoint(shape, endPoint);
-	}
-	
-	public List<IDisplayableShape> findSelectedShape(Point startingPoint, Point endingPoint){
-		return shapeFinder.findSelectedShape(startingPoint, endingPoint, observers);
-	}
 	
 	public Point getStartNewPoint(IDisplayableShape shape, Point endPoint){
 		return pointFinder.getNewStartPoint(shape, endPoint);
@@ -115,9 +104,17 @@ public class ShapeList implements IShapeList {
 		pointFinder.setSelectionPoint(selectedPoint);
 	}
 	
-
 	public void setSelectionArea(Point startingPoint, Point endingPoint) {
 		pointFinder.setSelectionArea(startingPoint, endingPoint);
+	}
+	
+	public Point moveSelectedShape(IDisplayableShape shape, Point endPoint){
+		observers.remove(shape);
+		return getStartNewPoint(shape, endPoint);
+	}
+	
+	public List<IDisplayableShape> findSelectedShape(Point startingPoint, Point endingPoint){
+		return shapeFinder.findSelectedShape(startingPoint, endingPoint, observers);
 	}
 }	
 	

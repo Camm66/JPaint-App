@@ -2,8 +2,9 @@ package view.GuiUiModule;
 
 import java.awt.event.MouseEvent;
 import javax.swing.event.MouseInputAdapter;
+
+import ControllerInterface.IStartAndEndPointCommand;
 import controller.Point;
-import modelInterfaces.IStartAndEndPointCommand;
 
 public class MyMouseListener extends MouseInputAdapter{
 	private Point startingPoint;

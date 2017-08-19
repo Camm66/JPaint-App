@@ -3,7 +3,7 @@ package model;
 import controller.ShadingType;
 import modelInterfaces.*;
 
-class OutlineShape implements IDisplayableShape {
+public class OutlineShape implements IDisplayableShape {
 	private final IViewShape viewShape;
 	private final ShadingType shadingType = ShadingType.OUTLINE;
 
