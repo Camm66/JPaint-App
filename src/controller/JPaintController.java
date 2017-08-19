@@ -1,22 +1,17 @@
 package controller;
 
-import ControllerInterface._CopyCommand;
-import ControllerInterface._DeleteCommand;
 import ControllerInterface.IPaintController;
-import ControllerInterface._PasteCommand;
-import ControllerInterface._RedoCommand;
-import ControllerInterface._UndoCommand;
 import modelInterfaces.IShapeList;
 import view.ShapeList;
 import viewInterfaces.EventName;
 import viewInterfaces.UIModule;
 
-public class _JPaintController implements IPaintController {
+public class JPaintController implements IPaintController {
     private final UIModule _uiModule;
     private final ApplicationSettings _settings;
     private final IShapeList _shapeList;
 
-    public _JPaintController(UIModule ui, ApplicationSettings settings, IShapeList shapeList) {
+    public JPaintController(UIModule ui, ApplicationSettings settings, IShapeList shapeList) {
         _uiModule = ui;
         _settings = settings;
         _shapeList = shapeList;

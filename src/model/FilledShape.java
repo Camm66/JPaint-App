@@ -3,7 +3,7 @@ package model;
 import controller.ShadingType;
 import modelInterfaces.*;
 
-public class FilledShape implements IDisplayableShape {
+class FilledShape implements IDisplayableShape {
 	private final IViewShape viewShape;
 	private final ShadingType shadingType = ShadingType.FILLED_IN;
 	

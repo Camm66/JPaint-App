@@ -1,6 +1,7 @@
-package ControllerInterface;
+package controller;
 
-import controller.Point;
+import ControllerInterface.CommandHistory;
+import ControllerInterface.RecordDrawCommand;
 import modelInterfaces.*;
 
 public class _CreateShapeCommand implements IStartAndEndPointCommand {

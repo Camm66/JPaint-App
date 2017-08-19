@@ -1,5 +1,6 @@
-package ControllerInterface;
+package controller;
 
+import ControllerInterface.ICommand;
 import modelInterfaces.IShapeList;
 
 public class _CopyCommand implements ICommand{

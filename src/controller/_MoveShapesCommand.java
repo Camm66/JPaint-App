@@ -1,9 +1,10 @@
-package ControllerInterface;
+package controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import controller.Point;
+import ControllerInterface.CommandHistory;
+import ControllerInterface.RecordMoveCommand;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
 import modelInterfaces.IStartAndEndPointCommand;

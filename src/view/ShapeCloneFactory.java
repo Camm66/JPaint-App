@@ -10,9 +10,10 @@ import modelInterfaces.IDisplayableShapeFactory;
 import modelInterfaces.IViewShape;
 import modelInterfaces.IViewShapeFactory;
 
-public class ShapeCloneFactory {
+public class ShapeCloneFactory{
 	private final IViewShapeFactory viewShapeFactory;
 	private final IDisplayableShapeFactory displayableShapeFactory;
+	
 	
 	public ShapeCloneFactory(IViewShapeFactory viewShapeFactory, IDisplayableShapeFactory displayableShapeFactory){
 		this.viewShapeFactory = viewShapeFactory;

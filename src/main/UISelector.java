@@ -4,14 +4,15 @@ import controller.ApplicationSettings;
 import view.ShapeList;
 import view.UIFactory;
 import view.UIType;
+import view.GuiUiModule.PaintCanvas;
 import viewInterfaces.InvalidUIException;
 import viewInterfaces.UIModule;
 
 public class UISelector {
-    public UIModule getUi(String arg, ApplicationSettings settings, ShapeList shapeList) throws InvalidUIException {
+    public UIModule getUi(String arg, ApplicationSettings settings, ShapeList shapeList, PaintCanvas canvas) throws InvalidUIException {
         UIType uiType;
         uiType = getUiType(arg);
-        UIModule ui = UIFactory.createUI(uiType, settings, shapeList);
+        UIModule ui = UIFactory.createUI(uiType, settings, shapeList, canvas);
         return ui;
     }
 

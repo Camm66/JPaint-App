@@ -1,16 +1,18 @@
-package ControllerInterface;
+package controller;
 
 import java.util.List;
 
+import ControllerInterface.CommandHistory;
+import ControllerInterface.ICommand;
+import ControllerInterface.RecordDeleteCommand;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
-import view.ShapeList;
 
 public class _DeleteCommand implements ICommand{
-	private final ShapeList _shapeList;
+	private final IShapeList _shapeList;
 	
 	
-	public _DeleteCommand(ShapeList shapeList){
+	public _DeleteCommand(IShapeList shapeList){
 		_shapeList = shapeList;
 	}
 	

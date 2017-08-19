@@ -1,12 +1,10 @@
-package view;
+package model;
 
 import controller.ShadingType;
 import modelInterfaces.*;
-import model.*;
 
 public class DisplayableShapeFactory implements IDisplayableShapeFactory {
 
-	@Override
 	public IDisplayableShape createDisplayShape(ShadingType currentShading, IViewShape viewShape) throws Exception {
 		switch(currentShading){
 			case OUTLINE:

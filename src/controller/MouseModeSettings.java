@@ -4,7 +4,7 @@ import viewInterfaces.IDialogChoice;
 
 public class MouseModeSettings implements IDialogChoice {
     private MouseMode currentMouseMode = getDefaultChoice();
-    private MouseModeSwitcher mouseModeFactory;
+    private MouseModeFactory mouseModeFactory;
 
 
     
@@ -22,11 +22,11 @@ public class MouseModeSettings implements IDialogChoice {
     }
     
     
-    public void setMouseModeFactory(MouseModeSwitcher mouseModeFactory){
+    public void setMouseModeFactory(MouseModeFactory mouseModeFactory){
     	this.mouseModeFactory = mouseModeFactory;
     }
     
-    public MouseModeSwitcher getMouseModeFactory(){
+    public MouseModeFactory getMouseModeFactory(){
     	return mouseModeFactory;
     }
 

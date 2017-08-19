@@ -1,8 +1,7 @@
-package ControllerInterface;
+package controller;
 
 import java.util.List;
 
-import controller.Point;
 import modelInterfaces.IDisplayableShape;
 import modelInterfaces.IShapeList;
 import modelInterfaces.IStartAndEndPointCommand;

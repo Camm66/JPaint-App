@@ -1,4 +1,7 @@
-package ControllerInterface;
+package controller;
+
+import ControllerInterface.CommandHistory;
+import ControllerInterface.ICommand;
 
 public class _RedoCommand implements ICommand {
 	
